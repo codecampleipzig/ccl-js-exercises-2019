@@ -1,7 +1,5 @@
-var myName ="World"
-
-function introduce(name) {
-    console.log (`Hello ${name}!`);
+function introduce (){
+    console.log (`Hello World!`);
 }
 
-introduce (myName);
+introduce();
