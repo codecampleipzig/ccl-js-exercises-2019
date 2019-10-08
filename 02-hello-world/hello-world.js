@@ -1,5 +1,1 @@
-function introduce (){
-    console.log (`Hello World!`);
-}
-
-introduce();
+ console.log (`Hello World!`)
