@@ -6,4 +6,4 @@ var noun = ' croissant';
 var adjective = ' spicy'; 
 var pluralnoun = ' feet';
 
-console.log (a + noun + b + adjective + c + pluralnoun + d)
+console.log (a + noun + b + adjective + c + pluralnoun + d);
