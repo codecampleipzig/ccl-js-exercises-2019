@@ -1,4 +1,7 @@
-/* Parse Input */
+/* 
+Parse Input 
+Example:    node complement-color.js 255 212 0
+*/
 var inputRGB = [ process.argv[2], process.argv[3], process.argv[4]];
 
 /* Returns input Object in CSS Style */
