@@ -2,16 +2,24 @@
 Parse Input 
 Example:    node complement-color.js 255 212 0
 */
-var inputRGB = [ process.argv[2], process.argv[3], process.argv[4]];
+var inputColor = {
+    red: process.argv[2],
+    green: process.argv[3],
+    blue: process.argv[4]
+}
 
 /* Returns input Object in CSS Style */
-function RGBToString(input = [0,0,0]) {
-    return "rgb(" + input[0] + "," + input[1] + "," + input[2] + ")";
+function toCSSString(inputColor) {
+    return "rgb(" + inputColor.red + ", " + inputColor.green + ", " + inputColor.blue + ")";
 }
 
 /* complement from input object */
-function complementRGB(input = [0,0,0]) {
-    return [ 255-input[0], 255-input[1], 255-input[2]];
+function getComplement(inputColor = [0,0,0]) {
+    return {
+        red: 255 - inputColor.red,
+        green: 255 - inputColor.green,
+        blue: 255 - inputColor.blue
+    }
 }
 
-console.log ( RGBToString( complementRGB(inputRGB) ) );
+console.log ( toCSSString( getComplement(inputColor) ) );
