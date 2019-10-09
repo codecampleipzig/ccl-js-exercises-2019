@@ -4,9 +4,9 @@ function random( randomOf = false ) {
     }
 }
 
-var noun = ["Rat", "Wiesele", "blabla"];
-var adjective = ["multiple", "easy", "hard"];
-var pluralNoun = ["ways","whatevers","Moritzes"];
+var noun = ["rat", "scorpion", "whatever"];
+var adjective = ["multiple", "some", "any"];
+var pluralNoun = ["ways","whatevers","nouns"];
 var message = `Those born under the planetary sign of the ` + random(noun) + ` possess 
 ` + random(adjective) + ` personalities and are forever searching for new ` + random(pluralNoun) + ` 
 to conquer.`;
