@@ -9,4 +9,4 @@ var complementBlue = 255 - blue;
 var color = [red, green, blue];
 var complementColor = [complementRed, complementGreen, complementBlue];
 
-console.log("The complement color of rgb (" + color + ") is rgb(" + complementColor + ").")
+console.log("The complement color of rgb (" + color + ") is rgb(" + complementColor + ").");
