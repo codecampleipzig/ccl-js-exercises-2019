@@ -5,3 +5,5 @@ if (typeof (process.argv)[2] == typeof "") {
 } else {
     console.log("Something went wrong.")
 }
+ //argv is shortcut for lookup//
+ 
