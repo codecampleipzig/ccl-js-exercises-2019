@@ -14,7 +14,7 @@ function toCSSString(inputColor) {
 }
 
 /* complement from input object */
-function getComplement(inputColor = [0,0,0]) {
+function getComplement(inputColor) {
     return {
         red: 255 - inputColor.red,
         green: 255 - inputColor.green,
