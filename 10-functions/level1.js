@@ -1,3 +1,9 @@
+function testEqual (name, testValue, expected) {
+    if (testValue != expected) {
+        console.log ("Test " + name + " failed: Expected: " + expected + " Actual Value: " + 
+        testValue);
+         }
+}
 // Exercise 1
 // Create a function that takes two numbers as arguments and return their sum
 // Examples:
@@ -5,12 +11,24 @@
 //    addition (-3, -6) ➞ -9
 //    addition (7, 3) ➞ 10
 
+function sum(a, b) {
+    return a + b;
+}
+
+testEqual ("addition 1", sum(3, 2), 5);
+
 // Exercise 2
 // Create a function that takes an array and returns the first element.
 // Examples:
 //    getFirstValue ([1, 2, 3]) ➞ 1
 //    getFirstValue ([80, 5, 100]) ➞ 80
 //    getFirstValue ([-500, 0, 50]) ➞ -500
+
+function array (a, b, c) {
+    return [a];
+}
+
+testEqual ("array", array(1, 2, 3), 1);
 
 // Exercise 3
 // Write a function that takes the base and height of a triangle and return its area
@@ -21,6 +39,12 @@
 // Notes
 //    The area of a triangle is: (base * height) / 2
 
+function triArea (base, height) {
+    return (base * height) / 2;
+}
+
+testEqual ("triangle area", triArea(3, 2), 3);
+
 // Exercise 4
 // Create a function that takes two integers and checks if they are equal.
 // Examples
@@ -29,6 +53,13 @@
 //    isEqual("1", 1) ➞ false
 // Notes
 //    If there is a string then it should return false.
+
+function isEqual (a, b) {
+    
+    return (a == b);
+}
+
+console.log (isEqual (5, 2));
 
 // Exercise 5
 // Create a function that takes a number as an argument, increments the number by +1 and returns the result.
