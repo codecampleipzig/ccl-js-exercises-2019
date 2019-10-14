@@ -9,7 +9,6 @@ function testEqual(name, testValue, expected) {
    }
 }
 
-
 // Exercise 1
 // Create a function that takes two numbers as arguments and return their sum
 // Examples:
@@ -17,10 +16,13 @@ function testEqual(name, testValue, expected) {
 //    addition (-3, -6) ➞ -9
 //    addition (7, 3) ➞ 10
 
-function myAddition(a, b) {
+function addition(a, b) {
    return (a + b);
 }
 
+testEqual ("Addition", addition(3, 2), 5);
+testEqual ("Addition", addition(-3, -6), -9);
+testEqual ("Addition", addition(7, 3), 10);
 
 // Exercise 2
 // Create a function that takes an array and returns the first element.
@@ -29,26 +31,30 @@ function myAddition(a, b) {
 //    getFirstValue ([80, 5, 100]) ➞ 80
 //    getFirstValue ([-500, 0, 50]) ➞ -500
 
-var myArray = [-500, 0, 50];
-
-function element(myArray) {
-   return myArray[0]; 
+function getFirstValue(array) {
+   return array[0]; 
 }
 
+testEqual ("getFirstValue", getFirstValue([1, 2, 3]), 1);
+testEqual ("getFirstValue", getFirstValue([80, 5, 100]), 80);
+testEqual ("getFirstValue", getFirstValue([-500, 0, 50]), -500);
+
 // Exercise 3
-// Write a function that takes the base and height of a triangle and return its area
+// Write a function that takes the base and height of a tri and return its area
 // Examples
 //    triArea(3, 2) ➞ 3
 //    triArea(7, 4) ➞ 14
 //    triArea(10, 10) ➞ 50
 // Notes
-//    The area of a triangle is: (base * height) / 2
+//    The area of a tri is: (base * height) / 2
 
-function triangleArea(height, base) {
+function triArea(height, base) {
    return ((height * base)/2);
 }
 
-// testEqual ("triangleArea", triangleArea(3, 2), 3);
+testEqual ("triArea", triArea(3, 2), 3);
+testEqual ("triArea", triArea(7, 4), 14);
+testEqual ("triArea", triArea(10, 10), 50);
 
 // Exercise 4
 // Create a function that takes two integers and checks if they are equal.
@@ -60,18 +66,17 @@ function triangleArea(height, base) {
 //    If there is a string then it should return false.
 
 function isEqual (a, b) {
-   if (typeof (a || b) == "string") {
+   if (typeof a == "string" || typeof b == "string" || a != b) {
       return false;   
-   } else {
-      if (a == b) {
-         return true;
-      } else {
-            return false;
-      }
+   } 
+   else {
+      return true;
    }
 }
 
-// testEqual ("Equal", isEqual("1", 1), false)
+testEqual ("Equal", isEqual(5, 6), false);
+testEqual ("Equal", isEqual(1, 1), true);
+testEqual ("Equal", isEqual("1", 1), false);
 
 // Exercise 5
 // Create a function that takes a number as an argument, increments the number by +1 and returns the result.
@@ -80,30 +85,35 @@ function isEqual (a, b) {
 //    addition(9) ➞ 10
 //    addition(-3) ➞ -2
 
-function addition (a) { 
+function addition2(a) { 
    return a + 1; 
 }
 
-// testEqual ("addition", addition (-75), -74)
+testEqual ("addition", addition2 (0), 1);
+testEqual ("addition", addition2 (9), 10);
+testEqual ("addition", addition2 (-3), -2);
 
 // Exercise 6
-// Create a function that finds the maximum *integer* range of a triangles third edge.
+// Create a function that finds the maximum *integer* range of a tris third edge.
 // Examples
 //    nextEdge(8, 10) ➞ 17
 //    nextEdge(5, 7) ➞ 11
 //    nextEdge(9, 2) ➞ 10
 // Notes
 //    (side1 + side2) - 1 = maximum range of third edge.
-//    Triangles have side lengths that are positive integers.
+//    tris have side lengths that are positive integers.
 
-function nextEdge (a, b) {
-   return (a + b) - 1;
+function nextEdge(a, b) {
+   return a + b - 1;
 }
 
-testEqual ("nextEdge", nextEdge(8, 10), 17)
+testEqual ("nextEdge", nextEdge(8, 10), 17);
+testEqual ("nextEdge", nextEdge(5, 7), 11);
+testEqual ("nextEdge", nextEdge(9, 2), 10);
 
 // Exercise 7
-// There is a single operator in JavaScript, capable of providing the remainder of a division operation. Two numbers are passed as parameters. The first parameter divided by the second parameter will have a remainder, possibly zero. Return that value.
+// There is a single operator in JavaScript, capable of providing the remainder of a division operation. Two numbers are passed as parameters. 
+// The first parameter divided by the second parameter will have a remainder, possibly zero. Return that value.
 // Examples
 //    remainder(1, 3) ➞ 1
 //    remainder(3, 4) ➞ 3
@@ -111,6 +121,16 @@ testEqual ("nextEdge", nextEdge(8, 10), 17)
 //    remainder(5, 5) ➞ 0
 // Notes
 //    The tests only use positive and negative integers.
+
+function remainder(a, b) {
+   return a % b;
+}
+
+testEqual ("remainder", remainder(1, 3), 1);
+testEqual ("remainder", remainder(5, 5), 0);
+testEqual ("remainder", remainder(-9, 45), -9);
+testEqual ("remainder", remainder(5, 5), 0);
+
 
 // Exercise 8
 // The Farm Problem

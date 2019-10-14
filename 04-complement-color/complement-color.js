@@ -5,13 +5,13 @@ var color = {
 };
 
 var complementColor = {
-   complementRed : (255 - color.red),
-   complementGreen : (255 - color.green),
-   complementBlue : (255 - color.blue),
-
+   red : (255 - color.red),
+   green : (255 - color.green),
+   blue : (255 - color.blue),
 };
 
-console.log ("The complement color of rgb (" + color.red +
- ", " + color.green + ", " + color.blue + ") is rgb(" +
-  complementColor.complementRed + ", " + complementColor.complementBlue + ", " + complementColor.complementGreen + ").");
-  
+function colorsToString(color) {
+   return "rgb(" + color.red + ", " + color.green + ", " + color.blue + ")"
+};
+
+console.log ("The complement color of " + colorsToString(color) + " is " + colorsToString(complementColor) + ".");
