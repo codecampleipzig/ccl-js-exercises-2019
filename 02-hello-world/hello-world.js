@@ -1,4 +1,3 @@
-if (true) {
-    console.log("yes");
-}
+console.log("Hello World")
+
 

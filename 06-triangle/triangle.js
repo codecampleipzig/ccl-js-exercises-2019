@@ -1,13 +1,14 @@
-function repeatStringNumTimes(string, times) {
-    var repeatedString = "";
-    while (times > 0) {
-    repeatedString += string;
-    times--;
-    }
-    return repeatedString;
+function pyramid(string, times) {
+   var result = "";
+   while (times > 0) {
+      result += string;
+      times--;
+   }
+   return result;
 }
 
+
 for (var i = 0; i < 10; i++) {
-    var x = repeatStringNumTimes("#", i);
-    console.log(x);
+   var x = pyramid("#", i);
+   console.log(x);
 }
