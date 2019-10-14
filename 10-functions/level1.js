@@ -1,3 +1,15 @@
+// Test function
+
+function testEqual(name, testValue, expected) {
+   if (testValue != expected) {
+      console.log ("Test " + name + " failed. Expected : " + expected + " Actual value: " + testValue);
+   }
+   else {
+      console.log ("Bravissimo!!!!!")
+   }
+}
+
+
 // Exercise 1
 // Create a function that takes two numbers as arguments and return their sum
 // Examples:
@@ -5,12 +17,23 @@
 //    addition (-3, -6) ➞ -9
 //    addition (7, 3) ➞ 10
 
+function myAddition(a, b) {
+   return (a + b);
+}
+
+
 // Exercise 2
 // Create a function that takes an array and returns the first element.
 // Examples:
 //    getFirstValue ([1, 2, 3]) ➞ 1
 //    getFirstValue ([80, 5, 100]) ➞ 80
 //    getFirstValue ([-500, 0, 50]) ➞ -500
+
+var myArray = [-500, 0, 50];
+
+function element(myArray) {
+   return myArray[0]; 
+}
 
 // Exercise 3
 // Write a function that takes the base and height of a triangle and return its area
@@ -20,6 +43,13 @@
 //    triArea(10, 10) ➞ 50
 // Notes
 //    The area of a triangle is: (base * height) / 2
+
+function triangleArea(height, base) {
+   return ((height * base)/2);
+}
+
+testEqual ("triangleArea", triangleArea(3, 2), 3);
+
 
 // Exercise 4
 // Create a function that takes two integers and checks if they are equal.
