@@ -1,9 +1,9 @@
 
 
 if (typeof (process.argv)[2] == typeof "") {
-    console.log("I got the command line arg " + process.argv[2]);
+    console.log ("I got the command line arg " + process.argv[2]);
 } else {
-    console.log("Something went wrong.")
+    console.log ("Something went wrong.");
 }
  //argv is shortcut for lookup//
  
