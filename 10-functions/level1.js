@@ -29,8 +29,8 @@ console.log (addition (7, 3));
 //    getFirstValue ([80, 5, 100]) ➞ 80
 //    getFirstValue ([-500, 0, 50]) ➞ -500
 /* Result Exercise 2
-function getFirstValue ([a, b, c]) {
-return [a];
+function getFirstValue (a) {
+return a[0];
 }
 console.log (getFirstValue ([1, 2, 3])
 console.log (getFirstValue ([80, 5, 100])
