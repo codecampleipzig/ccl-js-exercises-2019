@@ -48,8 +48,7 @@ function triangleArea(height, base) {
    return ((height * base)/2);
 }
 
-testEqual ("triangleArea", triangleArea(3, 2), 3);
-
+// testEqual ("triangleArea", triangleArea(3, 2), 3);
 
 // Exercise 4
 // Create a function that takes two integers and checks if they are equal.
@@ -60,12 +59,32 @@ testEqual ("triangleArea", triangleArea(3, 2), 3);
 // Notes
 //    If there is a string then it should return false.
 
+function isEqual (a, b) {
+   if (typeof (a || b) == "string") {
+      return false;   
+   } else {
+      if (a == b) {
+         return true;
+      } else {
+            return false;
+      }
+   }
+}
+
+// testEqual ("Equal", isEqual("1", 1), false)
+
 // Exercise 5
 // Create a function that takes a number as an argument, increments the number by +1 and returns the result.
 // Examples
 //    addition(0) ➞ 1
 //    addition(9) ➞ 10
 //    addition(-3) ➞ -2
+
+function addition (a) { 
+   return a + 1; 
+}
+
+// testEqual ("addition", addition (-75), -74)
 
 // Exercise 6
 // Create a function that finds the maximum *integer* range of a triangles third edge.
@@ -76,6 +95,12 @@ testEqual ("triangleArea", triangleArea(3, 2), 3);
 // Notes
 //    (side1 + side2) - 1 = maximum range of third edge.
 //    Triangles have side lengths that are positive integers.
+
+function nextEdge (a, b) {
+   return (a + b) - 1;
+}
+
+testEqual ("nextEdge", nextEdge(8, 10), 17)
 
 // Exercise 7
 // There is a single operator in JavaScript, capable of providing the remainder of a division operation. Two numbers are passed as parameters. The first parameter divided by the second parameter will have a remainder, possibly zero. Return that value.
