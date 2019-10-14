@@ -1,12 +1,17 @@
-var red = 0;
-var green = 1;
-var blue = 2;
+var color = {
+   red : 0,
+   green : 1,
+   blue : 2,
+};
 
-var complementRed = 255 - red;
-var complementGreen = 255 -green;
-var complementBlue = 255 - blue;
+var complementColor = {
+   complementRed : (255 - color.red),
+   complementGreen : (255 - color.green),
+   complementBlue : (255 - color.blue),
 
-var color = [red, green, blue];
-var complementColor = [complementRed, complementGreen, complementBlue];
+};
 
-console.log("The complement color of rgb (" + color + ") is rgb(" + complementColor + ").");
+console.log ("The complement color of rgb (" + color.red +
+ ", " + color.green + ", " + color.blue + ") is rgb(" +
+  complementColor.complementRed + ", " + complementColor.complementBlue + ", " + complementColor.complementGreen + ").");
+  
