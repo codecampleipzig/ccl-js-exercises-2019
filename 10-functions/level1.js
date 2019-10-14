@@ -1,3 +1,9 @@
+function testEqual (name, testValue, expected) {
+   if (testValue != expected) {
+      console.log ("Test "+name+ " failed: Expected value: "+ expected + ". Actual value: " + testValue);
+   }
+}
+
 // Exercise 1
 // Create a function that takes two numbers as arguments and return their sum
 // Examples:
@@ -5,12 +11,28 @@
 //    addition (-3, -6) ➞ -9
 //    addition (7, 3) ➞ 10
 
+function addition (x,y) {
+   return x + y;
+}
+
+testEqual ("Exercise 1", addition(3,2),5);
+testEqual ("Exercise 1", addition(-3,-6),-9);
+testEqual ("Exercise 1", addition(7,3),10);
+
 // Exercise 2
 // Create a function that takes an array and returns the first element.
 // Examples:
 //    getFirstValue ([1, 2, 3]) ➞ 1
 //    getFirstValue ([80, 5, 100]) ➞ 80
 //    getFirstValue ([-500, 0, 50]) ➞ -500
+
+function getFirstValue (x) {
+   return x[0];
+}
+
+testEqual ("Exercise 2", getFirstValue ([1, 2, 3]),1);
+testEqual ("Exercise 2", getFirstValue ([80, 5, 100]), 80);
+testEqual ("Exercise 2", getFirstValue([-500, 0, 50]), -500);
 
 // Exercise 3
 // Write a function that takes the base and height of a triangle and return its area
@@ -21,6 +43,15 @@
 // Notes
 //    The area of a triangle is: (base * height) / 2
 
+function triArea (base, height) {
+   return (base * height) / 2
+}
+
+testEqual ("Exercise 3", triArea (3, 2), 3);
+testEqual ("Exercise 3", triArea (7, 4), 14);
+testEqual ("Exercise 3", triArea(10, 10), 50);
+
+
 // Exercise 4
 // Create a function that takes two integers and checks if they are equal.
 // Examples
@@ -29,6 +60,20 @@
 //    isEqual("1", 1) ➞ false
 // Notes
 //    If there is a string then it should return false.
+
+function isEqual(x, y) {
+   if (x-y == 0) {
+      return true;
+   } 
+   else {
+      return false;
+   }  
+}
+
+//testEqual("Exercise 4", isEqual(5, 6),false);
+//testEqual("Exercise 4", isEqual(1, 1),true);
+testEqual("Exercise 4", isEqual("1", 1),false);
+
 
 // Exercise 5
 // Create a function that takes a number as an argument, increments the number by +1 and returns the result.
