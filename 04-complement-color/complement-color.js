@@ -6,4 +6,5 @@ var redComp = 255 - red
 var greenComp = 255 - green
 var blueComp = 255 - blue 
 
-console.log("RGB " + redComp + ", " + greenComp + "," + blueComp)
+console.log ("Your RGB input is "+ red +", " + green + " and " + blue +
+". The complementary color to the input RGB is " + redComp + ", " + greenComp + ", " + blueComp);
