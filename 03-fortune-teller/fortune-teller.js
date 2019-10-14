@@ -1,9 +1,9 @@
 var noun = "gemini";
-var adjective = "multiple";
-var pluralNoun = "empires";
+var adj = "multiple";
+var plNoun = "empires";
 
 var message = "Those born under the planetary sign of the " + noun + " possess "
-+ adjective + " personalities and are forever searching for new " + pluralNoun +
++ adj + " personalities and are forever searching for new " + plNoun +
 " to conquer.";
 
 console.log (message);
