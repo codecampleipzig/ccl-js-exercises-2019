@@ -1,7 +1,13 @@
-if (typeof process.argv[2] == typeof "") {
-    console.log(process.argv[2])
+function repeatStringNumTimes(string, times) {
+    var repeatedString = "";
+    while (times > 0) {
+    repeatedString += string;
+    times--;
+    }
+    return repeatedString;
 }
-else {
-    console.log("Error");
-    console.log("process.argv[2] is " +  process.argv[2])
+
+for (var i = 0; i < 10; i++) {
+    var x = repeatStringNumTimes("#", i);
+    console.log(x);
 }
