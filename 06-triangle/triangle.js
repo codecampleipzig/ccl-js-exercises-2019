@@ -1,15 +1,16 @@
-character = "#";
-depth = 10;
+var character = "#";
+var depth = 10;
 
-for ( i=0; i < depth; i++ ) {
-    //Reset characters for every new line
-    characters = "";
+for ( var i=0; i < depth; i++ ) {
 
-    //Add the Characters
-    for ( j=0; j <= i; j++) {
-        characters += character;    
-    }
+   // Reset characters for every new line
+   characters = "";
 
-    // Print the String
-    console.log(characters);
+   // Add the Characters
+   for ( j=0; j <= i; j++ ) {
+      characters += character;
+   }
+
+   // Print the String
+   console.log (characters);
 }
