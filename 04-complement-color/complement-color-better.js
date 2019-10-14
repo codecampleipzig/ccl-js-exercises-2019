@@ -10,5 +10,5 @@ var complement = {
     blue : 255 - color.blue
 };
 
-console.log ("RGB " + color.red + ", " + color.green + ", " + color.blue + 
-" turns into complementary RGB" + complement.red + ", " + complement.green + ", " + complement.blue + ". ")
+console.log ("RGB: " + color.red + ", " + color.green + ", " + color.blue + 
+" turns into complementary RGB:" + complement.red + ", " + complement.green + ", " + complement.blue + ". ");

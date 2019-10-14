@@ -1,4 +1,4 @@
-var noun = "Rat"
+var noun = "rat"
 var adjective = "lucky"
 var pluralNoun = "worlds"
 
