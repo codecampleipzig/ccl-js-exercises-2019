@@ -80,8 +80,8 @@ isEqual = function(int1, int2){
    }
 }
 
-testEqual(isEqual, isEqual(5,6), false);
-testEqual(isEqual, isEqual("1",1), false);
+// testEqual(isEqual, isEqual(5,6), false);
+// testEqual(isEqual, isEqual("1",1), false);
 
 
 // Exercise 5
@@ -90,6 +90,12 @@ testEqual(isEqual, isEqual("1",1), false);
 //    addition(0) ➞ 1
 //    addition(9) ➞ 10
 //    addition(-3) ➞ -2
+
+increment = function (int) {
+   return (int + 1);
+}
+
+testEqual(increment, increment(0), 1);
 
 // Exercise 6
 // Create a function that finds the maximum *integer* range of a triangles third edge.
