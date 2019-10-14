@@ -2,17 +2,8 @@ var red = 100;
 var green = 40;
 var blue = 0;
 
-/// var color = {
-///     red : 150,
-///     green : 200,
-///     blue : 50 
-/// };
+var cRed = 255 - red;
+var cGreen = 255 - green;
+var cBlue = 255 - blue;
 
-var cRed = 255-red;
-var cGreen = 255-green;
-var cBlue = 255-blue;
-
-///var complement = [cRed, cGreen, cBlue]
-
-console.log("Complement of red is " + cRed + ". " + "Complement of green is " + cGreen + ". " + "Complement of blue is " + cBlue + "."
-);
+console.log("The complement color of rgb(" + red + ", " + green + ", " + blue + ") is rgb(" + cRed + ", " + cGreen + ", " + cBlue + ").");
