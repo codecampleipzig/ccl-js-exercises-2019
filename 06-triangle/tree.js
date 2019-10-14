@@ -1,4 +1,4 @@
-var depth = 5;
+var depth = 8;
 
 for (i = 0; i < depth; i++) {
 
