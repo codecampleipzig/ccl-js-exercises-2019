@@ -131,7 +131,6 @@ testEqual ("remainder", remainder(5, 5), 0);
 testEqual ("remainder", remainder(-9, 45), -9);
 testEqual ("remainder", remainder(5, 5), 0);
 
-
 // Exercise 8
 // The Farm Problem
 // You've got chickens (2 legs), cows (4 legs) and pigs (4 legs) on your farm. Return the total number of legs on your farm.
@@ -139,6 +138,14 @@ testEqual ("remainder", remainder(5, 5), 0);
 //    animals(2, 3, 5) ➞ 36
 //    animals(1, 2, 3) ➞ 22
 //    animals(5, 2, 8) ➞ 50
+
+function animals(a, b, c) {
+   return a * 2 + b * 4 + c * 4;
+}
+
+testEqual ("animals", animals(2, 3, 5), 36)
+testEqual ("animals", animals(1, 2, 3), 22)
+testEqual ("animals", animals(5, 2, 8), 50)
 
 // Exercise 9
 // Profitable Gamble
@@ -150,6 +157,14 @@ testEqual ("remainder", remainder(5, 5), 0);
 //    profitableGamble(0.9, 3, 2) ➞ true
 // Notes
 //    A profitable gamble is a game that yields a positive net profit, where net profit is calculated in the following manner: net_outcome = probability_of_winning * prize - cost_of_playing.
+
+function profitableGamble(prob, prize, pay) {
+   return prob * prize > pay;
+}
+
+testEqual ("profitable Gamble", profitableGamble(0.2, 50, 9), true);
+testEqual ("profitable Gamble", profitableGamble(0.9, 1, 2), false);
+testEqual ("profitable Gamble", profitableGamble(0.9, 3, 2), true);
 
 // Exercise 10
 // Check if an Integer is Divisible By Five
