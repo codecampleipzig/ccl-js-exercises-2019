@@ -71,7 +71,13 @@ testFunc = function(func, inputs, outputs){
 
 isEqual = function(int1, int2){
    equality = int1 == int2;
-   return equality;
+
+   if (typeof(int1) || typeof(int2) == "string") {
+      return false;
+   }
+   else { 
+      return equality;
+   }
 }
 
 testEqual(isEqual, isEqual(5,6), false);
