@@ -1,3 +1,9 @@
+function testEqual (name, testValue, expected) {
+   if (testValue != expected) {
+      console.log ("Test " + name + " Failed: Expected: " + expected + " Actual Value: " + testValue);
+   }
+}
+
 // Exercise 1
 // Create a function that takes two numbers as arguments and return their sum
 // Examples:
@@ -5,12 +11,24 @@
 //    addition (-3, -6) ➞ -9
 //    addition (7, 3) ➞ 10
 
+function addition(a, b) {
+   return a + b;
+}
+
+console.log (addition (3, 2));
+
 // Exercise 2
 // Create a function that takes an array and returns the first element.
 // Examples:
 //    getFirstValue ([1, 2, 3]) ➞ 1
 //    getFirstValue ([80, 5, 100]) ➞ 80
 //    getFirstValue ([-500, 0, 50]) ➞ -500
+
+function getFirstValue([x, y, z]) {
+   return [x];
+}
+
+getFirstValue ([3, 4, 5]);
 
 // Exercise 3
 // Write a function that takes the base and height of a triangle and return its area
@@ -21,6 +39,12 @@
 // Notes
 //    The area of a triangle is: (base * height) / 2
 
+function triangleArea(b, h) {
+   return ((b * h)/2);
+}
+
+triangleArea (7, 4);
+
 // Exercise 4
 // Create a function that takes two integers and checks if they are equal.
 // Examples
@@ -30,6 +54,12 @@
 // Notes
 //    If there is a string then it should return false.
 
+function isEqual(x, y) {
+   return x == y;
+}
+
+isEqual (2, 2);
+
 // Exercise 5
 // Create a function that takes a number as an argument, increments the number by +1 and returns the result.
 // Examples
@@ -37,8 +67,14 @@
 //    addition(9) ➞ 10
 //    addition(-3) ➞ -2
 
+function incrementByOne(i) {
+   return i + 1;
+}
+
+incrementByOne (9);
+
 // Exercise 6
-// Create a function that finds the maximum *integer* range of a triangles third edge.
+// Create a function that finds the maximum *integer* range of a triangle's third edge.
 // Examples
 //    nextEdge(8, 10) ➞ 17
 //    nextEdge(5, 7) ➞ 11
@@ -46,6 +82,13 @@
 // Notes
 //    (side1 + side2) - 1 = maximum range of third edge.
 //    Triangles have side lengths that are positive integers.
+
+function thirdEdge(a, b) {
+   return (a + b) - 1;
+}
+
+thirdEdge (8, 10);
+
 
 // Exercise 7
 // There is a single operator in JavaScript, capable of providing the remainder of a division operation. Two numbers are passed as parameters. The first parameter divided by the second parameter will have a remainder, possibly zero. Return that value.
@@ -57,6 +100,12 @@
 // Notes
 //    The tests only use positive and negative integers.
 
+function remainder(x, y) {
+   return x % y;
+}
+
+remainder (10, 3);
+
 // Exercise 8
 // The Farm Problem
 // You've got chickens (2 legs), cows (4 legs) and pigs (4 legs) on your farm. Return the total number of legs on your farm.
@@ -64,6 +113,16 @@
 //    animals(2, 3, 5) ➞ 36
 //    animals(1, 2, 3) ➞ 22
 //    animals(5, 2, 8) ➞ 50
+
+var chicken = 2
+var cow = 4
+var pig = 4
+
+function totalLegs(a, b, c) {
+   return (chicken * a) + (cow * b) + (pig * c);
+}
+
+totalLegs (2, 3, 5);
 
 // Exercise 9
 // Profitable Gamble
@@ -75,6 +134,17 @@
 //    profitableGamble(0.9, 3, 2) ➞ true
 // Notes
 //    A profitable gamble is a game that yields a positive net profit, where net profit is calculated in the following manner: net_outcome = probability_of_winning * prize - cost_of_playing.
+
+function profitableGamble(prob, prize, cost) {
+   if (prob * prize > cost) {
+      return "true";
+   }
+   else {
+      return "false";
+   }
+}
+
+profitableGamble (0.9, 1, 2);
 
 // Exercise 10
 // Check if an Integer is Divisible By Five
