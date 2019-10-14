@@ -1,5 +1,5 @@
-if (typeof process.argv[2] == 'string' && process.argv[2] != "" ) {
-console.log (process.argv[2])
+if (typeof process.argv[2] == 'string' && process.argv[2] != "") {
+   console.log (process.argv[2])
 } else {
-    console.log ("Sorry?")
+   console.log ("Sorry?")
 }
