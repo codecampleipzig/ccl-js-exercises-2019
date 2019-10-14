@@ -1,3 +1,11 @@
+/* Test Example
+function testEqual (name, testValue, expected) {
+   if (testValue != expected) {
+      console.log ("Test"+ name + "failed: Expected:" + expected + "Actual Value: " + testValue);
+   }
+}
+*/
+
 // Exercise 1
 // Create a function that takes two numbers as arguments and return their sum
 // Examples:
@@ -5,12 +13,29 @@
 //    addition (-3, -6) ➞ -9
 //    addition (7, 3) ➞ 10
 
+/* Result Exercise 1
+function addition (a, b) {
+   return (a + b);
+}
+console.log (addition (3, 2)
+console.log (addition (-3, -6)
+console.log (addition (7, 3));
+*/
+
 // Exercise 2
 // Create a function that takes an array and returns the first element.
 // Examples:
 //    getFirstValue ([1, 2, 3]) ➞ 1
 //    getFirstValue ([80, 5, 100]) ➞ 80
 //    getFirstValue ([-500, 0, 50]) ➞ -500
+/* Result Exercise 2
+function getFirstValue ([a, b, c]) {
+return [a];
+}
+console.log (getFirstValue ([1, 2, 3])
+console.log (getFirstValue ([80, 5, 100])
+console.log (getFirstValue ([-500, 0, 50]));
+*/
 
 // Exercise 3
 // Write a function that takes the base and height of a triangle and return its area
@@ -21,6 +46,15 @@
 // Notes
 //    The area of a triangle is: (base * height) / 2
 
+/* Result Exercise 3
+function triArea (a,b) {
+   return ((a*b)/2);
+}
+console.log (triArea(3, 2));
+console.log (triArea(7, 4));
+console.log (triArea (10, 10));
+*/
+
 // Exercise 4
 // Create a function that takes two integers and checks if they are equal.
 // Examples
@@ -30,12 +64,37 @@
 // Notes
 //    If there is a string then it should return false.
 
+/* Result Exercise 4
+
+function isEqual (a,b){
+   return a === b;
+}
+console.log (isEqual(5,6));
+
+console.log (isEqual(1, 1));
+
+console.log (isEqual("1",1));
+*/
+
 // Exercise 5
 // Create a function that takes a number as an argument, increments the number by +1 and returns the result.
 // Examples
 //    addition(0) ➞ 1
 //    addition(9) ➞ 10
 //    addition(-3) ➞ -2
+
+/*Result Exercise 5
+
+
+function addition (a) {
+   return a + 1;
+}
+
+console.log (addition(0));
+console.log (addition(9));
+console.log (addition(-3));
+
+*/
 
 // Exercise 6
 // Create a function that finds the maximum *integer* range of a triangles third edge.
@@ -47,6 +106,17 @@
 //    (side1 + side2) - 1 = maximum range of third edge.
 //    Triangles have side lengths that are positive integers.
 
+/*Result Exercise 6 
+
+function nextEdge (a, b){
+   return (a + b) - 1 
+}
+
+console.log (nextEdge (8, 10));
+console.log (nextEdge (5, 7));
+console.log (nextEdge (9, 2));
+*/
+
 // Exercise 7
 // There is a single operator in JavaScript, capable of providing the remainder of a division operation. Two numbers are passed as parameters. The first parameter divided by the second parameter will have a remainder, possibly zero. Return that value.
 // Examples
@@ -57,6 +127,17 @@
 // Notes
 //    The tests only use positive and negative integers.
 
+/* Result Exercise 7
+function remainder (a, b){
+   return a % b ;
+}
+console.log (remainder(1, 3));
+console.log (remainder(3, 4));
+console.log (remainder(-9, 45));
+console.log (remainder(5, 5));
+*/
+
+
 // Exercise 8
 // The Farm Problem
 // You've got chickens (2 legs), cows (4 legs) and pigs (4 legs) on your farm. Return the total number of legs on your farm.
@@ -64,6 +145,15 @@
 //    animals(2, 3, 5) ➞ 36
 //    animals(1, 2, 3) ➞ 22
 //    animals(5, 2, 8) ➞ 50
+
+/* Result Exercise 8
+function animals (a, b, c){
+   return ((a * 2) + (b * 4) + (c * 4));
+}
+console.log (animals(2, 3, 5));
+console.log (animals(1, 2, 3));
+console.log (animals(5, 2, 8));
+*/
 
 // Exercise 9
 // Profitable Gamble
@@ -75,6 +165,8 @@
 //    profitableGamble(0.9, 3, 2) ➞ true
 // Notes
 //    A profitable gamble is a game that yields a positive net profit, where net profit is calculated in the following manner: net_outcome = probability_of_winning * prize - cost_of_playing.
+
+
 
 // Exercise 10
 // Check if an Integer is Divisible By Five
