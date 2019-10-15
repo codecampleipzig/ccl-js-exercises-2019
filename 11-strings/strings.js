@@ -8,13 +8,33 @@
 // Notes
 // A string containing only whitespaces " " does not count as empty.
 
+function emptyString(x){
+   if (x == ""){
+      return true;
+   }
+   else{
+      return false;
+   }
+}
+
+//console.log(emptyString("a"))
+
 // Exercise 2
 // Compare Strings by Count of Characters
-// Create a function that takes two strings as arguments and return either true or false depending on whether the total number of characters in the first string is equal to the total number of characters in the second string.
+// Create a function that takes two strings as arguments and return either true or false depending on 
+//    whether the total number of 
+//       characters in the first string is equal to the total number of characters in the second string.
 // Examples
 // comp("AB", "CD") ➞ true
 // comp("ABC", "DE") ➞ false
 // comp("hello", "edabit") ➞ false
+
+function stringCount(x, y){
+   return (x.length == y.length)
+}   
+
+//console.log(stringCount("AC","DE"))
+
 
 // Exercise 3
 // Check String for Spaces
@@ -28,6 +48,17 @@
 // Notes
 // An empty string does not contain any spaces.
 
+function checker(x){
+   for(var i = 0; i < x.length; i++){
+      if (x[i] == " "){
+         return true;
+      }
+   }
+   return false;
+}
+
+console.log(checker("hello, world"))
+
 // Exercise 4
 // Find the Index
 // Create a function that takes an array and a string as arguments and return the index of the string.
@@ -36,6 +67,9 @@
 // find_index(["Red", "blue", "Blue", "Green"], "blue") ➞ 1
 // find_index(["a", "g", "y", "d"], "d") ➞ 3
 // find_index(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple") ➞ 0
+
+
+
 
 // Exercise 5
 // Char-to-ASCII

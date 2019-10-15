@@ -6,6 +6,12 @@
 // reverse([9, 9, 2, 3, 4]) ➞ [4, 3, 2, 9, 9]
 // reverse([]) ➞ []
 
+function reverser(x) {
+   return x.reverse();
+}
+
+console.log(reverser([1, 2, 3, 4, 5]))
+
 // Exercise 2
 // Return the Last Element in an Array
 // Create a function that accepts an array and returns the last item in the array.
@@ -13,6 +19,12 @@
 // getLastItem([1, 2, 3]) ➞ 3
 // getLastItem(["cat", "dog", "duck"]) ➞ "duck"
 // getLastItem([true, false, true]) ➞ true
+
+function last(y) {
+   return y[y.length -1];
+}
+
+console.log(last(["cat", "dog", "duck"]))
 
 // Exercise 3
 // Check if an Array Contains a Given Number
@@ -22,6 +34,9 @@
 // check([1, 1, 2, 1, 1], 3) ➞ false
 // check([5, 5, 5, 6], 5) ➞ true
 // check([], 5) ➞ false
+
+
+
 
 // Exercise 4
 // Convert Number to Corresponding Month Name
