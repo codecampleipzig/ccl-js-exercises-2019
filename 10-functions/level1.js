@@ -142,6 +142,13 @@ testEqual("Exercise 7.5", remainder(0, 8), 0);
 //    animals(1, 2, 3) ➞ 22
 //    animals(5, 2, 8) ➞ 50
 
+function animals (chickens, cows, pigs) {
+   return chickens * 2 + cows * 4 + pigs * 4;
+}
+
+testEqual("Exercise 8.1", animals(2,3,5), 36);
+testEqual("Exercise 8.2", animals(1,2,3), 22);
+testEqual("Exercise 8.3", animals(5,2,8), 50);
 
 // Exercise 9
 // Profitable Gamble
@@ -154,6 +161,14 @@ testEqual("Exercise 7.5", remainder(0, 8), 0);
 // Notes
 //    A profitable gamble is a game that yields a positive net profit, where net profit is calculated in the following manner: net_outcome = probability_of_winning * prize - cost_of_playing.
 
+function profitableGamble (prob, prize, pay) {
+   return (prob * prize - pay) > 0;
+}
+
+testEqual("Exercise 9.1", profitableGamble (0.2, 50, 9), true);
+testEqual("Exercise 9.2", profitableGamble (0.9, 1, 2), false);
+testEqual("Exercise 9.3", profitableGamble (0.9, 3, 2), true);
+
 // Exercise 10
 // Check if an Integer is Divisible By Five
 // Create a function that returns true if an integer is divisible by 5, and false otherwise.
@@ -161,6 +176,14 @@ testEqual("Exercise 7.5", remainder(0, 8), 0);
 //    divisibleByFive(5) ➞ true
 //    divisibleByFive(-55) ➞ true
 //    divisibleByFive(37) ➞ false
+
+function divisibleByFive (x) {
+   return x%5 == 0;
+}
+
+testEqual("Exercise 10.1", divisibleByFive (5), true);
+testEqual("Exercise 10.2", divisibleByFive (55), true);
+testEqual("Exercise 10.3", divisibleByFive (37), false);
 
 // Exercise 11
 // Is the String Empty?
