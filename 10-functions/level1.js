@@ -233,7 +233,12 @@ testEqual ("getLastItem", getLastItem([true, false, true]), true);
 // Notes
 //    If the item is not present, return -1.
 
-
+function search(array, b) {
+   return array.indexOf(b);
+}
+testEqual ("search", search([1, 5, 3], 5), 1);
+testEqual ("search", search([9, 8, 3], 3), 2);
+testEqual ("search", search([1, 2, 3], 4), -1);
 
 // Exercise 14
 // Find the Index (part 2)
@@ -245,6 +250,15 @@ testEqual ("getLastItem", getLastItem([true, false, true]), true);
 // Notes
 //    If the item is not present, return -1.
 
+function search2(array, b) {
+   return array.indexOf(b);
+}
+
+testEqual ("search", search([1, 2, 3, 4], 3), 2);
+testEqual ("search", search([2, 4, 6, 8, 10], 8), 3);
+testEqual ("search", search([1, 3, 5, 7, 9], 11), -1);
+
+
 // Exercise 15
 // Volume of a Box
 // Create a function that gets an object arguments with height, width and length of a box and returns the volume of the box.
@@ -252,6 +266,14 @@ testEqual ("getLastItem", getLastItem([true, false, true]), true);
 //    volumeOfBox({ width: 2, length: 5, height: 1 }) ➞ 10
 //    volumeOfBox({ width: 4, length: 2, height: 2 }) ➞ 16
 //    volumeOfBox({ width: 2, length: 3, height: 5 }) ➞ 30
+
+function volumeOfBox (object) {
+   return object.width * object.length * object.height;
+}
+
+testEqual ("testEqual", volumeOfBox({ width: 2, length: 5, height: 1 }), 10);
+testEqual ("testEqual", volumeOfBox({ width: 4, length: 2, height: 2 }), 16);
+testEqual ("testEqual", volumeOfBox({ width: 2, length: 3, height: 5 }), 30);
 
 // Exercise 16
 // Check String for Spaces
