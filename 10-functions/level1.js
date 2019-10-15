@@ -309,7 +309,11 @@ testEqual ("19 operation", operation(11, 11), null);
 //    This is an oversimplification of the English language. We are ignoring edge cases like "goose" and "geese", "fungus" and "fungi", etc.
 
 function isPlural(noun) {
+   // the .length approach
    var lastLetter = noun[noun.length - 1];
+   
+   // the .charAt approach
+   var lastLetter = noun.charAt(noun.length - 1);
    
    if (lastLetter == "s") {
       return true;
