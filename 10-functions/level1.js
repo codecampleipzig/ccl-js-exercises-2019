@@ -1,7 +1,7 @@
 function testEqual (name, testValue, expected) {
-    if (testValue != expected) {
-        console.log('Test ' + name + ' failed: Expected: ' + expected + '. Actual value: ' + testValue);
-    }
+   if (testValue != expected) {
+      console.log('Test ' + name + ' failed: Expected: ' + expected + '. Actual value: ' + testValue);
+   }
 }
 
 
@@ -15,7 +15,7 @@ function testEqual (name, testValue, expected) {
 //    addition (7, 3) ➞ 10
 
 var addition = function (x, y) {
-    return x + y;
+   return x + y;
 }
 
 // Exercise 2
@@ -28,7 +28,7 @@ var addition = function (x, y) {
 var array = [1, 2, 3];
 
 var getFirstValue = function (array) {
-    return array[0];
+   return array[0];
 }
 
 // Exercise 3
@@ -41,7 +41,7 @@ var getFirstValue = function (array) {
 //    The area of a triangle is: (base * height) / 2
 
 function triArea(base, height) {
-    return (base * height) / 2;
+   return (base * height) / 2;
 }
 
 // Exercise 4
@@ -54,9 +54,9 @@ function triArea(base, height) {
 //    If there is a string then it should return false.
 
 function isEqual(a, b) {
-    if (a == b) {
-        return true;
-    }
+   if (a == b) {
+      return true;
+   }
 }
 
 testEqual('4: is Equal', isEqual(1,1), true);
@@ -69,7 +69,7 @@ testEqual('4: is Equal', isEqual(1,1), true);
 //    addition(-3) ➞ -2
 
 function addOne(a) {
-    return a + 1;
+   return a + 1;
 }
 
 testEqual ('5: addOne', addOne(2), 3);
@@ -85,9 +85,9 @@ testEqual ('5: addOne', addOne(2), 3);
 //    Triangles have side lengths that are positive integers.
 
 function nextEdge (side1, side2) {
-    if ( side1 > 0 && side2 > 0 ) {
-        return (side1 + side2) - 1;
-    }
+   if ( side1 > 0 && side2 > 0 ) {
+      return (side1 + side2) - 1;
+   }
 }
 
 testEqual('6: nextEdge', nextEdge (5, 6), 10);
@@ -103,7 +103,7 @@ testEqual('6: nextEdge', nextEdge (5, 6), 10);
 //    The tests only use positive and negative integers.
 
 function remainder (x, y) {
-    return x % y;
+   return x % y;
 }
 
 testEqual('7: remainder', remainder(3, 4), 3)
@@ -117,7 +117,7 @@ testEqual('7: remainder', remainder(3, 4), 3)
 //    animals(5, 2, 8) ➞ 50
 
 function animals (chicken, cows, pigs) {
-    return chicken * 2 + (cows + pigs) * 4;
+   return chicken * 2 + (cows + pigs) * 4;
 }
 
 testEqual('8: Animals', animals(2,3,5), 36);
@@ -134,12 +134,12 @@ testEqual('8: Animals', animals(2,3,5), 36);
 //    A profitable gamble is a game that yields a positive net profit, where net profit is calculated in the following manner: net_outcome = probability_of_winning * prize - cost_of_playing.
 
 function profitableGamble (prob, prize, pay) {
-    if (prob * prize > pay) {
-        return true;
-    }
-    else {
-        return false;
-    }
+   if (prob * prize > pay) {
+      return true;
+   }
+   else {
+      return false;
+   }
 }
 
 testEqual ('9: profitableGamble', profitableGamble(0.2, 50, 9), true);
@@ -151,6 +151,8 @@ testEqual ('9: profitableGamble', profitableGamble(0.2, 50, 9), true);
 //    divisibleByFive(5) ➞ true
 //    divisibleByFive(-55) ➞ true
 //    divisibleByFive(37) ➞ false
+
+
 
 // Exercise 11
 // Is the String Empty?
@@ -230,6 +232,14 @@ testEqual ('9: profitableGamble', profitableGamble(0.2, 50, 9), true);
 //   continent: "Asia"
 // }) ➞ "Tokyo has a population of 13,929,286 and is situated in Asia"
 
+
+function cityFacts(object) {
+   return  `${object.name} has a population of ${object.population} and is situated in ${object.continent}`;
+};
+
+testEqual ("17: City Facts", cityFacts({name: "Paris", population: "2,140,526", continent: "Europe"}), "Paris has a population of 2,140,526 and is situated in Europe");
+testEqual ("17: City Facts", cityFacts({name: "Tokyo", population: "13,929,286", continent: "Asia"}), "Tokyo has a population of 13,929,286 and is situated in Asia");
+
 // Exercise 18
 // To the Power of _____
 //    Create a function that takes a base number and an exponent number and returns the calculation.
@@ -239,6 +249,18 @@ testEqual ('9: profitableGamble', profitableGamble(0.2, 50, 9), true);
 //    calculateExponent(3, 3) ➞ 27
 // Notes
 //    All test inputs will be positive integers.
+
+function calculateExponent(base, exponent) {
+   var originalBase = base;
+   for (var i = 1; i < exponent; i++) {
+      base *= originalBase;
+   }
+   return base;
+}
+
+testEqual ("18: calculateExponent.", calculateExponent(5, 5), 3125);
+testEqual ("18: calculateExponent.", calculateExponent(10, 10), 10000000000);
+testEqual ("18: calculateExponent.", calculateExponent(3, 3), 27);
 
 // Exercise 19
 // Add, Subtract, Multiply or Divide?
@@ -251,6 +273,30 @@ testEqual ('9: profitableGamble', profitableGamble(0.2, 50, 9), true);
 //    Only integers are used as test input.
 //    Numbers should be added, subtracted, divided or multiplied in the order they appear in the parameters.
 
+function operation(num1, num2) {
+   var goal = 24;
+
+   if (num1 + num2 == goal) {
+      return "added";
+   }
+   else if (num1 - num2 == goal) {
+      return "subtracted";
+   }
+   else if (num1 * num2 == goal) {
+      return "multiplied";
+   }
+   else if (num1 / num2 == goal) {
+      return "divided";
+   }
+   return null;
+}
+
+testEqual ("19 operation", operation(15, 9), "added");
+testEqual ("19 operation", operation(26, 2), "subtracted");
+testEqual ("19 operation", operation(3, 8), "multiplied");
+testEqual ("19 operation", operation(48, 2), "divided");
+testEqual ("19 operation", operation(11, 11), null);
+
 // Exercise 20
 // Is the Word Singular or Plural?
 // Create a function that takes in a word and determines whether or not it is plural. A plural word is one that ends in "s".
@@ -261,6 +307,21 @@ testEqual ('9: profitableGamble', profitableGamble(0.2, 50, 9), true);
 //    isPlural("magic") ➞ false
 // Notes
 //    This is an oversimplification of the English language. We are ignoring edge cases like "goose" and "geese", "fungus" and "fungi", etc.
+
+function isPlural(noun) {
+   var lastLetter = noun[noun.length - 1];
+   
+   if (lastLetter == "s") {
+      return true;
+   }
+   return false;
+}
+
+testEqual ("20.1: isPlural", isPlural("changes"), true);
+testEqual ("20.2: isPlural", isPlural("change"), false);
+testEqual ("20.2: isPlural", isPlural("change"), false);
+testEqual ("20.3: isPlural", isPlural("dudes"), true);
+testEqual ("20.4: isPlural", isPlural("magic"), false);
 
 // Exercies 21
 // Find the Total Number of Digits the Given Number Has
