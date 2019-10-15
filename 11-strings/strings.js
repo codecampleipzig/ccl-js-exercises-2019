@@ -1,3 +1,9 @@
+function testEqual (name, testValue, expected) {
+   if (testValue != expected) {
+      console.log('Test ' + name + ' failed: Expected: ' + expected + '. Actual value: ' + testValue);
+   }
+}
+
 // Exercise 1
 // Is the String Empty?
 // Create a function that returns true if a string is empty and false otherwise.
@@ -8,6 +14,14 @@
 // Notes
 // A string containing only whitespaces " " does not count as empty.
 
+function isEmpty (word) {
+   return word.length == 0;
+}
+
+testEqual ("1.1 isEmpty.", isEmpty(""), true);
+testEqual ("1.2 isEmpty.", isEmpty(" "), false);
+testEqual ("1.3 isEmpty.", isEmpty("a"), false);
+
 // Exercise 2
 // Compare Strings by Count of Characters
 // Create a function that takes two strings as arguments and return either true or false depending on whether the total number of characters in the first string is equal to the total number of characters in the second string.
@@ -15,6 +29,14 @@
 // comp("AB", "CD") ➞ true
 // comp("ABC", "DE") ➞ false
 // comp("hello", "edabit") ➞ false
+
+function comp (string1, string2) {
+   return string1.length == string2.length;
+}
+
+testEqual ("2.1 comp string lenght", comp ("AB", "CD"), true);
+testEqual ("2.2 comp string lenght", comp ("ABC", "DE"), false);
+testEqual ("2.3 comp string lenght", comp ("AB", "AB"), true);
 
 // Exercise 3
 // Check String for Spaces
@@ -27,6 +49,15 @@
 // hasSpaces(",./!@#") ➞ false
 // Notes
 // An empty string does not contain any spaces.
+
+function hasSpaces (string) {
+   return string.includes(" ");
+}
+
+testEqual ("3.1 comp string lenght", hasSpaces("hello"), false);
+testEqual ("3.2 comp string lenght", hasSpaces("hello, world"), true);
+testEqual ("3.3 comp string lenght", hasSpaces(" "), true);
+testEqual ("3.4 comp string lenght", hasSpaces(""), false);
 
 // Exercise 4
 // Find the Index
