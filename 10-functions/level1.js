@@ -198,6 +198,7 @@ function isEmpty(x){
 function getLastItem([x,y,z]){
    return [z];
 }
+
 // (getLastItem, getLastItem(["cat","dog","duck"]),"duck")
 
 // Exercise 13
