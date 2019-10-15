@@ -244,6 +244,7 @@ console.log (getLastItem([true, false, true]) == true);
 // Notes
 //    If the item is not present, return -1.
 
+/*
 function search (array, number) {
    return array.indexOf(number);
    }
@@ -251,6 +252,8 @@ function search (array, number) {
 console.log (search([1, 5, 3], 5) == 1);
 console.log (search([9, 8, 3], 3) == 2);
 console.log (search([1, 2, 3], 4) == -1);
+
+*/
 
 // Exercise 14
 // Find the Index (part 2)

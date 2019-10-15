@@ -8,6 +8,20 @@
 // Notes
 // A string containing only whitespaces " " does not count as empty.
 
+/* 
+
+Solution to exercise 1
+
+function isEmpty (str) {
+   return str.length == 0 ;
+}
+
+console.log (isEmpty("") == true);
+console.log (isEmpty(" ") == false);
+console.log (isEmpty("a") == false);
+
+*/
+
 // Exercise 2
 // Compare Strings by Count of Characters
 // Create a function that takes two strings as arguments and return either true or false depending on whether the total number of characters in the first string is equal to the total number of characters in the second string.
@@ -15,6 +29,20 @@
 // comp("AB", "CD") ➞ true
 // comp("ABC", "DE") ➞ false
 // comp("hello", "edabit") ➞ false
+
+/*
+
+Solution to exercise 2
+
+function comp (a, b){
+   return a.length == b.length;
+}
+
+console.log (comp("AB", "CD"));
+console.log (comp("ABC", "DE"));
+console.log (comp("hello", "edabit"));
+
+*/
 
 // Exercise 3
 // Check String for Spaces
@@ -28,6 +56,23 @@
 // Notes
 // An empty string does not contain any spaces.
 
+/* 
+
+Solution to Exercise 3
+
+function hasSpaces (string){
+   var whitespace = " ";
+   return string.includes(whitespace);
+}
+
+console.log (hasSpaces("hello"));
+console.log (hasSpaces("hello, world"));
+console.log (hasSpaces(" "));
+console.log (hasSpaces(""));
+console.log (hasSpaces(",./!@#"));
+
+*/
+
 // Exercise 4
 // Find the Index
 // Create a function that takes an array and a string as arguments and return the index of the string.
@@ -36,6 +81,21 @@
 // find_index(["Red", "blue", "Blue", "Green"], "blue") ➞ 1
 // find_index(["a", "g", "y", "d"], "d") ➞ 3
 // find_index(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple") ➞ 0
+
+/*
+
+Solution to Exercise 4
+
+function find_index (array, string) {
+   return array.indexOf(string);
+   }
+
+   console.log (find_index(["hi", "edabit", "fgh", "abc"], "fgh"));
+   console.log (find_index(["Red", "blue", "Blue", "Green"], "blue"));
+   console.log (find_index(["a", "g", "y", "d"], "d"));
+   console.log (find_index(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple"));
+
+*/
 
 // Exercise 5
 // Char-to-ASCII
