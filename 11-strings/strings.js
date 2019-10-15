@@ -1,3 +1,9 @@
+function testEqual(name, testValue, expected) {
+   if (testValue != expected) {
+      console.log("Test " + name + " failed: Expected value: " + expected + ". Actual value: " + testValue);
+   }
+}
+
 // Exercise 1
 // Is the String Empty?
 // Create a function that returns true if a string is empty and false otherwise.
@@ -8,13 +14,37 @@
 // Notes
 // A string containing only whitespaces " " does not count as empty.
 
+function isEmpty(a) {
+   //String (a);
+   // convert a value into string
+   return a.length == 0;
+}
+
+testEqual("Exercise 1.1", isEmpty(""), true);
+testEqual("Exercise 1.2", isEmpty(" "), false);
+testEqual("Exercise 1.3", isEmpty("b"), false);
+testEqual("Exercise 1.4", isEmpty(3), false);
+testEqual("Exercise 1.5", isEmpty([]), true);
+
 // Exercise 2
 // Compare Strings by Count of Characters
-// Create a function that takes two strings as arguments and return either true or false depending on whether the total number of characters in the first string is equal to the total number of characters in the second string.
+// Create a function that takes two strings as arguments and return either true or false depending on whether the total number of characters in the first string 
+// is equal to the total number of characters in the second string.
 // Examples
 // comp("AB", "CD") ➞ true
 // comp("ABC", "DE") ➞ false
 // comp("hello", "edabit") ➞ false
+
+function comp(a, b) {
+   //check if string ASK
+   return String(a).length == String(b).length;
+}
+
+testEqual("Exercise 2.1", comp("AB", "CD"), true);
+testEqual("Exercise 2.2", comp("ABC", "DE"), false);
+testEqual("Exercise 2.3", comp("hello", "edabit"), false);
+testEqual("Exercise 2.4", comp(3, "3"), true);
+
 
 // Exercise 3
 // Check String for Spaces
@@ -27,6 +57,25 @@
 // hasSpaces(",./!@#") ➞ false
 // Notes
 // An empty string does not contain any spaces.
+//    You can use "string".charAt(index) to get the character at a certain index in a string
+//    "string".charAt(4) ➞ "i"
+
+function hasSpaces(a) {
+   for (i = 0; i < a.length; i++) {
+      var element = a.charAt(i);
+      if (element == " ") {
+         return true;
+      }
+   }
+   return false;
+}
+
+testEqual("Exercise 3.1", hasSpaces("hello"), false);
+testEqual("Exercise 3.2", hasSpaces("hello, world"), true);
+testEqual("Exercise 3.3", hasSpaces(" "), true);
+testEqual("Exercise 3.4", hasSpaces(""), false);
+testEqual("Exercise 3.5", hasSpaces(",./!@#"), false);
+
 
 // Exercise 4
 // Find the Index
@@ -36,6 +85,22 @@
 // find_index(["Red", "blue", "Blue", "Green"], "blue") ➞ 1
 // find_index(["a", "g", "y", "d"], "d") ➞ 3
 // find_index(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple") ➞ 0
+
+function find_index(a, b) {
+   for (i = 0; i < a.length; i++) {
+      var element = a[i];
+      if (element == b) {
+         return a.indexOf(element);
+      }
+   }
+   return;
+}
+
+testEqual("Exercise 4.1", find_index(["hi", "edabit", "fgh", "abc"], "fgh"), 2);
+testEqual("Exercise 4.2", find_index(["Red", "blue", "Blue", "Green"], "blue"), 1);
+testEqual("Exercise 4.3", find_index(["a", "g", "y", "d"], "d"), 3);
+testEqual("Exercise 4.4", find_index(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple"), 0);
+
 
 // Exercise 5
 // Char-to-ASCII

@@ -6,6 +6,15 @@
 // reverse([9, 9, 2, 3, 4]) ➞ [4, 3, 2, 9, 9]
 // reverse([]) ➞ []
 
+function reverseArray (a) {
+   return a.reverse();
+}
+
+// testEqual("Exercise 1.1", reverseArray ([1, 2, 3, 4]), [1, 3, 2, 4]);
+// testEqual("Exercise 1.2", reverseArray ([9, 9, 2, 3, 4]), [4, 3, 2, 9, 9]);
+// testEqual("Exercise 1.3", reverseArray ([]), []);
+
+
 // Exercise 2
 // Return the Last Element in an Array
 // Create a function that accepts an array and returns the last item in the array.
