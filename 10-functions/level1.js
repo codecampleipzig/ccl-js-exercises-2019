@@ -210,15 +210,16 @@ function getLastItem([x,y,z]){
 // Notes
 //    If the item is not present, return -1.
 
-function search ([a, b, c], x) {
-   for (i=0, i<[].length, i++) {
-      if (x == []) {
-         return 
+function search(array, x) {
+   for (var i = 0; i < array.length; i++) {
+      if (array[i] == x) {
+         return i
       }
    }
+   return array.indexOf(i)
 }
 
-testEqual (search, search([1, 5, 3], 2), 1)
+testEqual (search, search([1, 5, 3], 5), 1)
 
 // Exercise 14
 // Find the Index (part 2)
