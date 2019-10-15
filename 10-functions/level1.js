@@ -107,6 +107,17 @@ testEqual ("equal", isEqual(5, 2), false);
 // Notes
 //    A profitable gamble is a game that yields a positive net profit, where net profit is calculated in the following manner: net_outcome = probability_of_winning * prize - cost_of_playing.
 
+function profitableGamble(prob, prize, pay) {
+    return (prob * prize > pay ? true: false);
+}
+// ternary - poss. redundant?
+
+function profitableGamble2(prob, prize, pay) {
+    return (prob * prize > pay);
+}
+
+testEqual ("gamble", profitableGamble(0.9, 1, 2), false);
+testEqual ("gamble", profitableGamble2(0.9, 1, 2), false);
 
 // Exercise 10
 // Check if an Integer is Divisible By Five
@@ -115,6 +126,22 @@ testEqual ("equal", isEqual(5, 2), false);
 //    divisibleByFive(5) ➞ true
 //    divisibleByFive(-55) ➞ true
 //    divisibleByFive(37) ➞ false
+
+function divisiblebyFive(a) {
+    if (a % 5 == 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function divisiblebyFive2(a) {
+    return (a % 5 == 0);
+}
+
+testEqual("divisible", divisiblebyFive(37), false);
+testEqual("divisible", divisiblebyFive2(37), false);
 
 // Exercise 11
 // Is the String Empty?
@@ -126,6 +153,13 @@ testEqual ("equal", isEqual(5, 2), false);
 // Notes
 //    A string containing only whitespaces " " does not count as empty.
 
+function isEmpty(a) {
+    return (a == "");
+        
+}
+
+testEqual("empty", isEmpty(" "), false);
+
 // Exercise 12
 // Return the Last Element in an Array
 // Create a function that accepts an array and returns the last item in the array.
@@ -133,6 +167,13 @@ testEqual ("equal", isEqual(5, 2), false);
 //    getLastItem([1, 2, 3]) ➞ 3
 //    getLastItem(["cat", "dog", "duck"]) ➞ "duck"
 //    getLastItem([true, false, true]) ➞ true
+
+function getLastItem ([a, b, c]) {
+    x = [a, b, c];
+    return x[x.length-1];
+}
+
+testEqual("last item", getLastItem(["cat", "dog", "duck"]), "duck");
 
 // Exercise 13
 // Find the Index (Part 1)
