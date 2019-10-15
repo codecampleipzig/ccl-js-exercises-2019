@@ -1,10 +1,10 @@
-/* Test Example
 function testEqual (name, testValue, expected) {
    if (testValue != expected) {
       console.log ("Test"+ name + "failed: Expected:" + expected + "Actual Value: " + testValue);
+   } else {
+      console.log (name, testValue == expected);
    }
 }
-*/
 
 // Exercise 1
 // Create a function that takes two numbers as arguments and return their sum
@@ -13,14 +13,15 @@ function testEqual (name, testValue, expected) {
 //    addition (-3, -6) ➞ -9
 //    addition (7, 3) ➞ 10
 
-/* Result Exercise 1
+
 function addition (a, b) {
    return (a + b);
 }
-console.log (addition (3, 2)
-console.log (addition (-3, -6)
-console.log (addition (7, 3));
-*/
+
+testEqual("Exercise 1", addition (3, 2), 5);
+testEqual("Exercise 1", addition (-3, -6), -9);
+testEqual("Exercise 1", addition (7, 3), 10);
+
 
 // Exercise 2
 // Create a function that takes an array and returns the first element.
@@ -28,15 +29,13 @@ console.log (addition (7, 3));
 //    getFirstValue ([1, 2, 3]) ➞ 1
 //    getFirstValue ([80, 5, 100]) ➞ 80
 //    getFirstValue ([-500, 0, 50]) ➞ -500
-/* Result Exercise 2
 
 function getFirstValue (a) {
 return a[0];
 }
-console.log (getFirstValue ([1, 2, 3])
-console.log (getFirstValue ([80, 5, 100])
-console.log (getFirstValue ([-500, 0, 50]));
-*/
+testEqual("Exercise 2", getFirstValue ([1, 2, 3]), 1);
+testEqual("Exercise 2", getFirstValue ([80, 5, 100]), 80);
+testEqual("Exercise 2", getFirstValue ([-500, 0, 50]), -500);
 
 // Exercise 3
 // Write a function that takes the base and height of a triangle and return its area
@@ -47,14 +46,12 @@ console.log (getFirstValue ([-500, 0, 50]));
 // Notes
 //    The area of a triangle is: (base * height) / 2
 
-/* Result Exercise 3
 function triArea (a,b) {
    return ((a*b)/2);
 }
-console.log (triArea(3, 2));
-console.log (triArea(7, 4));
-console.log (triArea (10, 10));
-*/
+testEqual("Exercise 3", triArea(3, 2), 3) ;
+testEqual("Exercise 3", triArea(7, 4), 14) ;
+testEqual("Exercise 3", triArea (10, 10), 50);
 
 // Exercise 4
 // Create a function that takes two integers and checks if they are equal.
@@ -71,9 +68,7 @@ function isEqual (a,b){
    return a === b;
 }
 console.log (isEqual(5,6));
-
 console.log (isEqual(1, 1));
-
 console.log (isEqual("1",1));
 */
 
@@ -209,7 +204,7 @@ console.log (divisibleByFive(37));
 
 /* Result Exercise 11
 function isEmpty (str) {
-   return (str.length === 0 || !str);
+   return str.length == 0;
 }
 
 console.log (isEmpty (""));
@@ -247,6 +242,14 @@ console.log (getLastItem([true, false, true]));
 //    search([1, 2, 3], 4) ➞ -1
 // Notes
 //    If the item is not present, return -1.
+
+/*
+function search (array, number){
+   return array.indexOf(number);
+}
+
+console.log (search([1, 5, 3], 5) == 1);
+*/
 
 // Exercise 14
 // Find the Index (part 2)
