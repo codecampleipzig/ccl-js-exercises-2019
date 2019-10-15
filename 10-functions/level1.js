@@ -121,7 +121,7 @@ testEqual("Exercise 6.3", nextEdge(9, 2), 10);
 //    The tests only use positive and negative integers.
 
 function remainder(x, y) {
-   // if (!Number.isInteger(x) || !Number.isInteger(y) || y != 0) {
+   // if (!Number.isInteger(x) || !Number.isInteger(y) || y == 0) {
    //    return;
    // }
    return x % y;
@@ -142,13 +142,13 @@ testEqual("Exercise 7.5", remainder(0, 8), 0);
 //    animals(1, 2, 3) ➞ 22
 //    animals(5, 2, 8) ➞ 50
 
-function animals (chickens, cows, pigs) {
+function animals(chickens, cows, pigs) {
    return chickens * 2 + cows * 4 + pigs * 4;
 }
 
-testEqual("Exercise 8.1", animals(2,3,5), 36);
-testEqual("Exercise 8.2", animals(1,2,3), 22);
-testEqual("Exercise 8.3", animals(5,2,8), 50);
+testEqual("Exercise 8.1", animals(2, 3, 5), 36);
+testEqual("Exercise 8.2", animals(1, 2, 3), 22);
+testEqual("Exercise 8.3", animals(5, 2, 8), 50);
 
 // Exercise 9
 // Profitable Gamble
@@ -161,13 +161,13 @@ testEqual("Exercise 8.3", animals(5,2,8), 50);
 // Notes
 //    A profitable gamble is a game that yields a positive net profit, where net profit is calculated in the following manner: net_outcome = probability_of_winning * prize - cost_of_playing.
 
-function profitableGamble (prob, prize, pay) {
+function profitableGamble(prob, prize, pay) {
    return (prob * prize - pay) > 0;
 }
 
-testEqual("Exercise 9.1", profitableGamble (0.2, 50, 9), true);
-testEqual("Exercise 9.2", profitableGamble (0.9, 1, 2), false);
-testEqual("Exercise 9.3", profitableGamble (0.9, 3, 2), true);
+testEqual("Exercise 9.1", profitableGamble(0.2, 50, 9), true);
+testEqual("Exercise 9.2", profitableGamble(0.9, 1, 2), false);
+testEqual("Exercise 9.3", profitableGamble(0.9, 3, 2), true);
 
 // Exercise 10
 // Check if an Integer is Divisible By Five
@@ -177,13 +177,13 @@ testEqual("Exercise 9.3", profitableGamble (0.9, 3, 2), true);
 //    divisibleByFive(-55) ➞ true
 //    divisibleByFive(37) ➞ false
 
-function divisibleByFive (x) {
-   return x%5 == 0;
+function divisibleByFive(x) {
+   return x % 5 == 0;
 }
 
-testEqual("Exercise 10.1", divisibleByFive (5), true);
-testEqual("Exercise 10.2", divisibleByFive (55), true);
-testEqual("Exercise 10.3", divisibleByFive (37), false);
+testEqual("Exercise 10.1", divisibleByFive(5), true);
+testEqual("Exercise 10.2", divisibleByFive(55), true);
+testEqual("Exercise 10.3", divisibleByFive(37), false);
 
 // Exercise 11
 // Is the String Empty?
@@ -195,6 +195,21 @@ testEqual("Exercise 10.3", divisibleByFive (37), false);
 // Notes
 //    A string containing only whitespaces " " does not count as empty.
 
+
+// Solution 1:
+function isEmpty(a) {
+   return a == "";
+}
+
+// Solution 2:
+// function isEmpty (a) {
+//    return a.length == 0;
+// }
+
+testEqual("Exercise 11.1", isEmpty(""), true);
+testEqual("Exercise 11.2", isEmpty(" "), false);
+testEqual("Exercise 11.3", isEmpty("a"), false);
+
 // Exercise 12
 // Return the Last Element in an Array
 // Create a function that accepts an array and returns the last item in the array.
@@ -202,6 +217,14 @@ testEqual("Exercise 10.3", divisibleByFive (37), false);
 //    getLastItem([1, 2, 3]) ➞ 3
 //    getLastItem(["cat", "dog", "duck"]) ➞ "duck"
 //    getLastItem([true, false, true]) ➞ true
+
+function getLastItem(x) {
+   return x[x.length - 1];
+}
+
+testEqual("Exercise 12.1", getLastItem([1, 2, 3]), 3);
+testEqual("Exercise 12.2", getLastItem(["cat", "dog", "duck"]), "duck");
+testEqual("Exercise 12.3", getLastItem([true, false, true]), true);
 
 // Exercise 13
 // Find the Index (Part 1)
@@ -212,6 +235,7 @@ testEqual("Exercise 10.3", divisibleByFive (37), false);
 //    search([1, 2, 3], 4) ➞ -1
 // Notes
 //    If the item is not present, return -1.
+
 
 // Exercise 14
 // Find the Index (part 2)
