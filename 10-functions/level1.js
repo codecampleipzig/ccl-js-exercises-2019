@@ -396,6 +396,9 @@ function isPlural (str) {
 }
 
 testEqual ("isPlural", isPlural("changes"), true);
+testEqual ("isPlural", isPlural("change"), false);
+testEqual ("isPlural", isPlural("dudes"), true);
+testEqual ("isPlural", isPlural("magic"), false);
 
 // Exercies 21
 // Find the Total Number of Digits the Given Number Has
@@ -407,4 +410,13 @@ testEqual ("isPlural", isPlural("changes"), true);
 //    findDigitAmount(61217311514) ➞ 11
 //    findDigitAmount(0) ➞ 1
 
-function
+function findDigitAmount(a) {
+   return String(a).length;
+}
+
+testEqual ("findDigitAmount", findDigitAmount(123), 3);
+testEqual ("findDigitAmount", findDigitAmount(56), 2);
+testEqual ("findDigitAmount", findDigitAmount(7154), 4);
+testEqual ("findDigitAmount", findDigitAmount(61217311514), 11);
+testEqual ("findDigitAmount", findDigitAmount(0), 1);
+
