@@ -1,5 +1,8 @@
 function testEqual (name, testValue, expected) {
-   if (testValue != expected) {
+   if (testValue == expected) {
+      console.log("Test successful");
+   }
+   else{
       console.log ("Test " + name + " Failed: Expected: " + expected + " Actual Value: " + testValue);
    }
 }
@@ -15,7 +18,7 @@ function addition(a, b) {
    return a + b;
 }
 
-console.log (addition (3, 2));
+//console.log (addition (3, 2));
 
 // Exercise 2
 // Create a function that takes an array and returns the first element.
@@ -154,6 +157,16 @@ profitableGamble (0.9, 1, 2);
 //    divisibleByFive(-55) ➞ true
 //    divisibleByFive(37) ➞ false
 
+function div (x) {
+   if (typeof (x/5) == typeof (5)) {
+      return true;
+   }
+   else {
+      return false;
+   }
+}
+//testEqual(div, div(5, -55, 37),true)
+
 // Exercise 11
 // Is the String Empty?
 // Create a function that returns true if a string is empty and false otherwise.
@@ -164,6 +177,16 @@ profitableGamble (0.9, 1, 2);
 // Notes
 //    A string containing only whitespaces " " does not count as empty.
 
+function isEmpty(x){
+   if (x == ""){
+      return true;
+   }
+   else{
+      return false;
+   }
+}
+//testEqual(isEmpty, isEmpty(""),true)
+
 // Exercise 12
 // Return the Last Element in an Array
 // Create a function that accepts an array and returns the last item in the array.
@@ -171,6 +194,11 @@ profitableGamble (0.9, 1, 2);
 //    getLastItem([1, 2, 3]) ➞ 3
 //    getLastItem(["cat", "dog", "duck"]) ➞ "duck"
 //    getLastItem([true, false, true]) ➞ true
+
+function getLastItem([x,y,z]){
+   return [z];
+}
+// (getLastItem, getLastItem(["cat","dog","duck"]),"duck")
 
 // Exercise 13
 // Find the Index (Part 1)
@@ -181,6 +209,16 @@ profitableGamble (0.9, 1, 2);
 //    search([1, 2, 3], 4) ➞ -1
 // Notes
 //    If the item is not present, return -1.
+
+function search ([a, b, c], x) {
+   for (i=0, i<[].length, i++) {
+      if (x == []) {
+         return 
+      }
+   }
+}
+
+testEqual (search, search([1, 5, 3], 2), 1)
 
 // Exercise 14
 // Find the Index (part 2)
