@@ -77,6 +77,15 @@ testEqual ("hasSpace5", hasSpace(",./!@#"), false);
 // find_index(["a", "g", "y", "d"], "d") ➞ 3
 // find_index(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple") ➞ 0
 
+function find_index(array, str) {
+   return array.indexOf(str);
+} 
+
+testEqual ("findIndex", find_index(["hi", "edabit", "fgh", "abc"], "fgh"), 2);
+testEqual ("findIndex", find_index(["Red", "blue", "Blue", "Green"], "blue"), 1);
+testEqual ("findIndex", find_index(["a", "g", "y", "d"], "d"), 3);
+testEqual ("findIndex", find_index(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple"), 0);
+
 // Exercise 5
 // Char-to-ASCII
 // Create a function that returns the ASCII value of the passed in character.
@@ -86,6 +95,15 @@ testEqual ("hasSpace5", hasSpace(",./!@#"), false);
 // ctoa("[") ➞ 91
 // ctoa("\") ➞ 92
 
+function ctoa(str) {
+   return str.charCodeAt(0);
+}
+
+testEqual ("ctoa", ctoa("A"), 65);
+testEqual ("ctoa", ctoa("m"), 109);
+testEqual ("ctoa", ctoa("["), 91);
+testEqual ("ctoa", ctoa("\\"), 92);
+
 // Exercise 6
 // Count Syllables
 // Create a function that counts the number of syllables a word has. Each syllable is separated with a dash -.
@@ -94,6 +112,19 @@ testEqual ("hasSpace5", hasSpace(",./!@#"), false);
 // numberSyllables("beau-ti-ful") ➞ 3
 // numberSyllables("mon-u-men-tal") ➞ 4
 // numberSyllables("on-o-mat-o-poe-ia") ➞ 6
+
+
+function numberSyllables(str) {
+   var counterDash = 0;
+   for (var i = 0; i < str.length; i++){
+      if (str[i] == "-"){
+         counterDash += 1;  
+      }
+   }
+   return counterDash + 1;
+}
+
+console.log (numberSyllables("mon-u-men-tal"))
 
 // Exercise 7
 // Semantic Versioning
