@@ -17,8 +17,8 @@ function testEqual (name, testValue, expected) {
 function addition (a, b) {
    return (a + b);
 }
-console.log (addition (3, 2)
-console.log (addition (-3, -6)
+console.log (addition (3, 2);
+console.log (addition (-3, -6);
 console.log (addition (7, 3));
 */
 
@@ -166,7 +166,15 @@ console.log (animals(5, 2, 8));
 // Notes
 //    A profitable gamble is a game that yields a positive net profit, where net profit is calculated in the following manner: net_outcome = probability_of_winning * prize - cost_of_playing.
 
+/* Result Exercise 9
+function profitableGamble (prob, prize, pay) {
+   return prob * prize > pay;
+}
 
+console.log (profitableGamble(0.2, 50, 9));
+console.log (profitableGamble(0.9, 1, 2));
+console.log (profitableGamble(0.9, 3, 2));
+*/
 
 // Exercise 10
 // Check if an Integer is Divisible By Five
@@ -175,6 +183,17 @@ console.log (animals(5, 2, 8));
 //    divisibleByFive(5) ➞ true
 //    divisibleByFive(-55) ➞ true
 //    divisibleByFive(37) ➞ false
+
+/* Result Exercise 10
+function divisibleByFive (a){
+   return a % 5 == 0;
+}
+
+console.log (divisibleByFive(5));
+console.log (divisibleByFive(-55));
+console.log (divisibleByFive(37));
+*/
+
 
 // Exercise 11
 // Is the String Empty?
@@ -186,6 +205,17 @@ console.log (animals(5, 2, 8));
 // Notes
 //    A string containing only whitespaces " " does not count as empty.
 
+/* Result Exercise 11
+function isEmpty (str) {
+   return str.length == 0 ;
+}
+
+console.log (isEmpty("") == true);
+console.log (isEmpty(" ") == false);
+console.log (isEmpty("a") == false);
+*/
+
+
 // Exercise 12
 // Return the Last Element in an Array
 // Create a function that accepts an array and returns the last item in the array.
@@ -193,6 +223,16 @@ console.log (animals(5, 2, 8));
 //    getLastItem([1, 2, 3]) ➞ 3
 //    getLastItem(["cat", "dog", "duck"]) ➞ "duck"
 //    getLastItem([true, false, true]) ➞ true
+
+/*
+function getLastItem (array){
+   return array[array.length - 1]; 
+}
+console.log ("Results Exercise 12");
+console.log (getLastItem([1, 2, 3]) == 3);
+console.log (getLastItem(["cat", "dog", "duck"]) == "duck");
+console.log (getLastItem([true, false, true]) == true);
+*/
 
 // Exercise 13
 // Find the Index (Part 1)
@@ -203,6 +243,14 @@ console.log (animals(5, 2, 8));
 //    search([1, 2, 3], 4) ➞ -1
 // Notes
 //    If the item is not present, return -1.
+
+function search (array, number) {
+   return array.indexOf(number);
+   }
+
+console.log (search([1, 5, 3], 5) == 1);
+console.log (search([9, 8, 3], 3) == 2);
+console.log (search([1, 2, 3], 4) == -1);
 
 // Exercise 14
 // Find the Index (part 2)
