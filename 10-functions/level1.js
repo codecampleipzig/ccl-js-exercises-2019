@@ -1,6 +1,6 @@
-function testEqual (name, testValue, expected) {
+function testEqual(name, testValue, expected) {
    if (testValue != expected) {
-      console.log ("Test "+name+ " failed: Expected value: "+ expected + ". Actual value: " + testValue);
+      console.log("Test " + name + " failed: Expected value: " + expected + ". Actual value: " + testValue);
    }
 }
 
@@ -11,13 +11,13 @@ function testEqual (name, testValue, expected) {
 //    addition (-3, -6) ➞ -9
 //    addition (7, 3) ➞ 10
 
-function addition (x,y) {
+function addition(x, y) {
    return x + y;
 }
 
-testEqual ("Exercise 1", addition(3,2),5);
-testEqual ("Exercise 1", addition(-3,-6),-9);
-testEqual ("Exercise 1", addition(7,3),10);
+testEqual("Exercise 1", addition(3, 2), 5);
+testEqual("Exercise 1", addition(-3, -6), -9);
+testEqual("Exercise 1", addition(7, 3), 10);
 
 // Exercise 2
 // Create a function that takes an array and returns the first element.
@@ -26,13 +26,13 @@ testEqual ("Exercise 1", addition(7,3),10);
 //    getFirstValue ([80, 5, 100]) ➞ 80
 //    getFirstValue ([-500, 0, 50]) ➞ -500
 
-function getFirstValue (x) {
+function getFirstValue(x) {
    return x[0];
 }
 
-testEqual ("Exercise 2", getFirstValue ([1, 2, 3]),1);
-testEqual ("Exercise 2", getFirstValue ([80, 5, 100]), 80);
-testEqual ("Exercise 2", getFirstValue([-500, 0, 50]), -500);
+testEqual("Exercise 2", getFirstValue([1, 2, 3]), 1);
+testEqual("Exercise 2", getFirstValue([80, 5, 100]), 80);
+testEqual("Exercise 2", getFirstValue([-500, 0, 50]), -500);
 
 // Exercise 3
 // Write a function that takes the base and height of a triangle and return its area
@@ -43,13 +43,13 @@ testEqual ("Exercise 2", getFirstValue([-500, 0, 50]), -500);
 // Notes
 //    The area of a triangle is: (base * height) / 2
 
-function triArea (base, height) {
+function triArea(base, height) {
    return (base * height) / 2
 }
 
-testEqual ("Exercise 3", triArea (3, 2), 3);
-testEqual ("Exercise 3", triArea (7, 4), 14);
-testEqual ("Exercise 3", triArea(10, 10), 50);
+testEqual("Exercise 3", triArea(3, 2), 3);
+testEqual("Exercise 3", triArea(7, 4), 14);
+testEqual("Exercise 3", triArea(10, 10), 50);
 
 
 // Exercise 4
@@ -61,12 +61,34 @@ testEqual ("Exercise 3", triArea(10, 10), 50);
 // Notes
 //    If there is a string then it should return false.
 
+function isEqual(x, y) {
+   if (typeof x == typeof y) {
+      return x == y;
+   } else {
+      return false;
+   }
+}
+
+testEqual("Exercise 4.1", isEqual(5, 6), false);
+testEqual("Exercise 4.2", isEqual(1, 1), true);
+testEqual("Exercise 4.3", isEqual("1", 1), false);
+
 // Exercise 5
 // Create a function that takes a number as an argument, increments the number by +1 and returns the result.
 // Examples
 //    addition(0) ➞ 1
 //    addition(9) ➞ 10
 //    addition(-3) ➞ -2
+
+function increment(x) {
+   return x + 1;
+}
+
+testEqual("Exercise 5.1", increment(0), 1);
+testEqual("Exercise 5.2", increment(9), 10);
+testEqual("Exercise 5.3", increment(-3), -2);
+//testEqual("Exercise 5.4", increment("simona"), "simona1");
+
 
 // Exercise 6
 // Create a function that finds the maximum *integer* range of a triangles third edge.
@@ -78,8 +100,18 @@ testEqual ("Exercise 3", triArea(10, 10), 50);
 //    (side1 + side2) - 1 = maximum range of third edge.
 //    Triangles have side lengths that are positive integers.
 
+function nextEdge(x, y) {
+   return (x + y) - 1;
+}
+
+testEqual("Exercise 6.1", nextEdge(8, 10), 17);
+testEqual("Exercise 6.2", nextEdge(5, 7), 11);
+testEqual("Exercise 6.3", nextEdge(9, 2), 10);
+
+
 // Exercise 7
-// There is a single operator in JavaScript, capable of providing the remainder of a division operation. Two numbers are passed as parameters. The first parameter divided by the second parameter will have a remainder, possibly zero. Return that value.
+// There is a single operator in JavaScript, capable of providing the remainder of a division operation. Two numbers are passed as parameters. 
+//The first parameter divided by the second parameter will have a remainder, possibly zero. Return that value.
 // Examples
 //    remainder(1, 3) ➞ 1
 //    remainder(3, 4) ➞ 3
@@ -88,6 +120,20 @@ testEqual ("Exercise 3", triArea(10, 10), 50);
 // Notes
 //    The tests only use positive and negative integers.
 
+function remainder(x, y) {
+   // if (!Number.isInteger(x) || !Number.isInteger(y) || y != 0) {
+   //    return;
+   // }
+   return x % y;
+}
+
+testEqual("Exercise 7.1", remainder(1, 3), 1);
+testEqual("Exercise 7.2", remainder(3, 4), 3);
+testEqual("Exercise 7.3", remainder(-9, 45), -9);
+testEqual("Exercise 7.4", remainder(5, 5), 0);
+testEqual("Exercise 7.5", remainder(0, 8), 0);
+//testEqual("Exercise 7.6", remainder("simona", 10), undefined);
+
 // Exercise 8
 // The Farm Problem
 // You've got chickens (2 legs), cows (4 legs) and pigs (4 legs) on your farm. Return the total number of legs on your farm.
@@ -95,6 +141,7 @@ testEqual ("Exercise 3", triArea(10, 10), 50);
 //    animals(2, 3, 5) ➞ 36
 //    animals(1, 2, 3) ➞ 22
 //    animals(5, 2, 8) ➞ 50
+
 
 // Exercise 9
 // Profitable Gamble
