@@ -17,7 +17,7 @@ function testEqual(name, testValue, expected) {
 //    addition (7, 3) ➞ 10
 
 function addition(a, b) {
-   return (a + b);
+   return a + b;
 }
 
 testEqual ("Addition", addition(3, 2), 5);
@@ -49,7 +49,7 @@ testEqual ("getFirstValue", getFirstValue([-500, 0, 50]), -500);
 //    The area of a tri is: (base * height) / 2
 
 function triArea(height, base) {
-   return ((height * base)/2);
+   return (height * base)/2;
 }
 
 testEqual ("triArea", triArea(3, 2), 3);
@@ -66,12 +66,10 @@ testEqual ("triArea", triArea(10, 10), 50);
 //    If there is a string then it should return false.
 
 function isEqual (a, b) {
-   if (typeof a == "string" || typeof b == "string" || a != b) {
-      return false;   
-   } 
-   else {
-      return true;
+   if (typeof a == "string" || typeof b == "string" || a != b){
+      return false;
    }
+   return true;
 }
 
 testEqual ("Equal", isEqual(5, 6), false);
@@ -175,10 +173,7 @@ testEqual ("profitable Gamble", profitableGamble(0.9, 3, 2), true);
 //    divisibleByFive(37) ➞ false
 
 function divisibleByFive(a) {
-   if (a % 5 == 0) {
-      return true;
-   }
-   return false;
+   return a % 5 == 0;
 }
 
 testEqual ("divisibleByFive", divisibleByFive(5), true);
@@ -195,11 +190,9 @@ testEqual ("divisibleByFive", divisibleByFive(37), false);
 // Notes
 //    A string containing only whitespaces " " does not count as empty.
 
-function isEmpty(string) {
-   if (string == "") {
-      return true;
-   }
-   return false;
+function isEmpty(str) {
+   // return !str;
+   return str.length == 0;
 }
 
 testEqual ("isEmpty", isEmpty(""), true);
@@ -218,6 +211,7 @@ function getLastItem(array) {
    // console.log (array.length -1)
    return array[array.length -1];
 }
+ ///nskkskskksksks
 
 testEqual ("getLastItem", getLastItem([1, 2, 3]), 3);
 testEqual ("getLastItem", getLastItem(["cat", "dog", "duck"]), "duck");
@@ -258,7 +252,6 @@ testEqual ("search", search([1, 2, 3, 4], 3), 2);
 testEqual ("search", search([2, 4, 6, 8, 10], 8), 3);
 testEqual ("search", search([1, 3, 5, 7, 9], 11), -1);
 
-
 // Exercise 15
 // Volume of a Box
 // Create a function that gets an object arguments with height, width and length of a box and returns the volume of the box.
@@ -288,22 +281,18 @@ testEqual ("testEqual", volumeOfBox({ width: 2, length: 3, height: 5 }), 30);
 //    You can use "string".charAt(index) to get the character at a certain index in a string
 //    "string".charAt(4) ➞ "i"
 
-
-
-function hasSpaces(string) {
-   var result = false;
-   for (var i = 0; i < string.length; i++){
-      if (string.charAt(i) == " "){
-         result = true;
-      }
-   } return result;
+function hasSpaces(str) {
+   for (var i = 0; i < str.length; i++){
+      return str.charAt(i) == " ";
+   } 
+   return false;
 }
 
-testEqual ("hasSpaces", hasSpaces("hello"), false);
-testEqual ("hasSpaces", hasSpaces("hello, world"), true);
-testEqual ("hasSpaces", hasSpaces(" "), true);
-testEqual ("hasSpaces", hasSpaces(""), false);
-testEqual ("hasSpaces", hasSpaces(",./!@#"), false);
+testEqual ("hasSpaces1", hasSpaces("hello"), false);
+testEqual ("hasSpaces2", hasSpaces(" hello, world"), true);
+testEqual ("hasSpaces3", hasSpaces(" "), true);
+testEqual ("hasSpaces4", hasSpaces(""), false);
+testEqual ("hasSpaces5", hasSpaces(",./!@#"), false);
 
 
 // Exercise 17
@@ -354,7 +343,6 @@ testEqual ("calculateExponent", calculateExponent(5, 5), 3125);
 testEqual ("calculateExponent", calculateExponent(10, 10), 10000000000);
 testEqual ("calculateExponent", calculateExponent(3, 3), 27);
 
-
 // Exercise 19
 // Add, Subtract, Multiply or Divide?
 // Write a function that takes two numbers and returns if they should be added, subtracted, multiplied or divided to get 24. 
@@ -401,6 +389,12 @@ testEqual ("operation", operation(11, 11), null);
 // Notes
 //    This is an oversimplification of the English language. We are ignoring edge cases like "goose" and "geese", "fungus" and "fungi", etc.
 
+function isPlural (str) {
+   return (str[str.length -1] == "s");
+}
+
+testEqual ("isPlural", isPlural("changes"), true);
+
 // Exercies 21
 // Find the Total Number of Digits the Given Number Has
 // Create a function that takes a number as an argument and returns the amount of digits it has.
@@ -410,3 +404,5 @@ testEqual ("operation", operation(11, 11), null);
 //    findDigitAmount(7154) ➞ 4
 //    findDigitAmount(61217311514) ➞ 11
 //    findDigitAmount(0) ➞ 1
+
+function
