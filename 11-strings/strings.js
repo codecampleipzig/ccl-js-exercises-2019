@@ -1,3 +1,15 @@
+
+
+function testEqual(name, testValue, expected) {
+   if (testValue != expected) {
+      console.log ("Test " + name + " failed. Expected : " + expected + " Actual value: " + testValue);
+   }
+   else {
+      console.log ("Bravissimo!!!!!")
+   }
+}
+
+
 // Exercise 1
 // Is the String Empty?
 // Create a function that returns true if a string is empty and false otherwise.
@@ -8,6 +20,14 @@
 // Notes
 // A string containing only whitespaces " " does not count as empty.
 
+function isEmpty(str){
+   return str == "";
+}
+
+testEqual ("isEmpty", isEmpty(""), true)
+testEqual ("isEmpty", isEmpty(" "), false)
+testEqual ("isEmpty", isEmpty("a"), false)
+
 // Exercise 2
 // Compare Strings by Count of Characters
 // Create a function that takes two strings as arguments and return either true or false depending on whether the total number of characters in the first string is equal to the total number of characters in the second string.
@@ -16,17 +36,37 @@
 // comp("ABC", "DE") ➞ false
 // comp("hello", "edabit") ➞ false
 
+function comp(a, b) {
+   return a.length == b.length;
+}
+
+testEqual ("comp", comp ("AB", "CD"), true)
+testEqual ("comp", comp ("ABC", "DE"), false)
+testEqual ("comp", comp ("hello", "edabit"), false)
+
 // Exercise 3
 // Check String for Spaces
 // Create a function that returns true if a string contains any spaces.
 // Examples
-// hasSpaces("hello") ➞ false
-// hasSpaces("hello, world") ➞ true
-// hasSpaces(" ") ➞ true
-// hasSpaces("") ➞ false
-// hasSpaces(",./!@#") ➞ false
+// hasSpace("hello") ➞ false
+// hasSpace("hello, world") ➞ true
+// hasSpace(" ") ➞ true
+// hasSpace("") ➞ false
+// hasSpace(",./!@#") ➞ false
 // Notes
 // An empty string does not contain any spaces.
+
+function hasSpace(str) {
+   for (var i = 0; i < str.length; i++) {
+      return str.charAt(i) == " ";
+   } return false;
+}
+
+testEqual ("hasSpace1", hasSpace("hello"), false);
+testEqual ("hasSpace2", hasSpace(" hello, world"), true);
+testEqual ("hasSpace3", hasSpace(" "), true);
+testEqual ("hasSpace4", hasSpace(""), false);
+testEqual ("hasSpace5", hasSpace(",./!@#"), false);
 
 // Exercise 4
 // Find the Index
