@@ -1,3 +1,13 @@
+
+function testEqual(name, testValue, expected) {
+   if (testValue != expected) {
+      console.log ("Test " + name + " failed. Expected : " + expected + " Actual value: " + testValue);
+   }
+   else {
+      console.log ("Bravissimo!!!!!")
+   }
+}
+
 // Exercise 1
 // Reverse an Array
 // Write a function to reverse an array.
@@ -6,6 +16,14 @@
 // reverse([9, 9, 2, 3, 4]) ➞ [4, 3, 2, 9, 9]
 // reverse([]) ➞ []
 
+function reverse(array) {
+   return array.reverse();
+}
+
+// testEqual("reverse", reverse([1, 2, 3, 4]), [4, 3, 2, 1]);
+// testEqual("reverse", reverse([9, 9, 2, 3, 4]), [4, 3, 2, 9, 9]);
+// testEqual("reverse", reverse([]), []);
+
 // Exercise 2
 // Return the Last Element in an Array
 // Create a function that accepts an array and returns the last item in the array.
@@ -13,6 +31,14 @@
 // getLastItem([1, 2, 3]) ➞ 3
 // getLastItem(["cat", "dog", "duck"]) ➞ "duck"
 // getLastItem([true, false, true]) ➞ true
+
+function getLastItem(array){
+   return array[array.length -1];
+}
+testEqual("getLastItem", getLastItem([1, 2, 3]), 3);
+testEqual("getLastItem", getLastItem(["cat", "dog", "duck"]), "duck");
+testEqual("getLastItem", getLastItem([true, false, true]), true);
+
 
 // Exercise 3
 // Check if an Array Contains a Given Number

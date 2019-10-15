@@ -283,13 +283,15 @@ testEqual ("testEqual", volumeOfBox({ width: 2, length: 3, height: 5 }), 30);
 
 function hasSpaces(str) {
    for (var i = 0; i < str.length; i++){
-      return str.charAt(i) == " ";
+      if (str.charAt(i) == " "){
+         return true;
+      }
    } 
    return false;
 }
 
 testEqual ("hasSpaces1", hasSpaces("hello"), false);
-testEqual ("hasSpaces2", hasSpaces(" hello, world"), true);
+testEqual ("hasSpaces2", hasSpaces("hello, world"), true);
 testEqual ("hasSpaces3", hasSpaces(" "), true);
 testEqual ("hasSpaces4", hasSpaces(""), false);
 testEqual ("hasSpaces5", hasSpaces(",./!@#"), false);
