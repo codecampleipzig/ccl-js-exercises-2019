@@ -6,6 +6,13 @@
 // reverse([9, 9, 2, 3, 4]) ➞ [4, 3, 2, 9, 9]
 // reverse([]) ➞ []
 
+function reversea(array) {
+    array.reverse();
+    return array;
+}
+
+console.log (reversea([1, 2, 3]))
+
 // Exercise 2
 // Return the Last Element in an Array
 // Create a function that accepts an array and returns the last item in the array.
@@ -13,6 +20,12 @@
 // getLastItem([1, 2, 3]) ➞ 3
 // getLastItem(["cat", "dog", "duck"]) ➞ "duck"
 // getLastItem([true, false, true]) ➞ true
+
+function lastElement (array) {
+    return array[array.length-1]
+}
+
+console.log(lastElement ([1, 2, 3]))
 
 // Exercise 3
 // Check if an Array Contains a Given Number
@@ -22,6 +35,12 @@
 // check([1, 1, 2, 1, 1], 3) ➞ false
 // check([5, 5, 5, 6], 5) ➞ true
 // check([], 5) ➞ false
+
+function check(array, b) {
+    return array.includes(b);
+}
+
+console.log (check([1, 2, 3, 4, 5, 6], 2));
 
 // Exercise 4
 // Convert Number to Corresponding Month Name
@@ -45,6 +64,15 @@
 // monthName(6) ➞ "June"
 // Notes
 // You can expect only integers ranging from 1 to 12 as test input.
+
+function monthName(a) {
+    var calendar = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+'October', 'November', 'December'];
+
+return calendar[a-1];
+}
+
+console.log (monthName(3))
 
 // Exercise 5
 // Generate a Countdown of Numbers in an Array
