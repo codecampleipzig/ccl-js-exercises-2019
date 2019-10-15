@@ -313,16 +313,11 @@ function isPlural(noun) {
    var lastLetter = noun[noun.length - 1];
    
    // the .charAt approach
-   var lastLetter = noun.charAt(noun.length - 1);
-   
-   if (lastLetter == "s") {
-      return true;
-   }
-   return false;
+   // var lastLetter = noun.charAt(noun.length - 1);
+   //   return lastLetter == "s";
 }
 
 testEqual ("20.1: isPlural", isPlural("changes"), true);
-testEqual ("20.2: isPlural", isPlural("change"), false);
 testEqual ("20.2: isPlural", isPlural("change"), false);
 testEqual ("20.3: isPlural", isPlural("dudes"), true);
 testEqual ("20.4: isPlural", isPlural("magic"), false);
