@@ -288,17 +288,33 @@ testEqual ("testEqual", volumeOfBox({ width: 2, length: 3, height: 5 }), 30);
 //    You can use "string".charAt(index) to get the character at a certain index in a string
 //    "string".charAt(4) ➞ "i"
 
+
+
 function hasSpaces(string) {
-   
+   var result = false;
+   for (var i = 0; i < string.length; i++){
+      if (string.charAt(i) == " "){
+         result = true;
+      }
+   } return result;
 }
+
+testEqual ("hasSpaces", hasSpaces("hello"), false);
+testEqual ("hasSpaces", hasSpaces("hello, world"), true);
+testEqual ("hasSpaces", hasSpaces(" "), true);
+testEqual ("hasSpaces", hasSpaces(""), false);
+testEqual ("hasSpaces", hasSpaces(",./!@#"), false);
+
 
 // Exercise 17
 // Extract City Facts
-// Create a function that takes an object as an argument and returns a string with facts about the city. The city facts will need to be extracted from the object's three properties:
+// Create a function that takes an object as an argument and returns a string with facts about the city. 
+// The city facts will need to be extracted from the object's three properties:
 // name
 // population
 // continent
-// The string should have the following format: X has a population of Y and is situated in Z (where X is the city name, Y is the population and Z is the continent the city is situated in).
+// The string should have the following format: X has a population of Y and is situated in Z 
+// (where X is the city name, Y is the population and Z is the continent the city is situated in).
 // Examples
 // cityFacts({
 //   name: "Paris",
@@ -311,6 +327,15 @@ function hasSpaces(string) {
 //   continent: "Asia"
 // }) ➞ "Tokyo has a population of 13,929,286 and is situated in Asia"
 
+function cityFacts(object) {
+   return object.name + " has a population of " + object.population + " and is situated in " + object.continent;
+}
+
+testEqual ("cityFacts", (cityFacts({
+     name: "Tokyo",
+     population: "13,929,286",
+     continent: "Asia" })), "Tokyo has a population of 13,929,286 and is situated in Asia");
+
 // Exercise 18
 // To the Power of _____
 //    Create a function that takes a base number and an exponent number and returns the calculation.
@@ -321,9 +346,19 @@ function hasSpaces(string) {
 // Notes
 //    All test inputs will be positive integers.
 
+function calculateExponent(a, b) {
+   return a ** b;
+}
+
+testEqual ("calculateExponent", calculateExponent(5, 5), 3125);
+testEqual ("calculateExponent", calculateExponent(10, 10), 10000000000);
+testEqual ("calculateExponent", calculateExponent(3, 3), 27);
+
+
 // Exercise 19
 // Add, Subtract, Multiply or Divide?
-// Write a function that takes two numbers and returns if they should be added, subtracted, multiplied or divided to get 24. If none of the operations can give 24, return null.
+// Write a function that takes two numbers and returns if they should be added, subtracted, multiplied or divided to get 24. 
+// If none of the operations can give 24, return null.
 // Examples
 //    operation(15, 9) ➞ "added"
 //    operation(26, 2) ➞ "subtracted"
@@ -331,6 +366,29 @@ function hasSpaces(string) {
 // Notes
 //    Only integers are used as test input.
 //    Numbers should be added, subtracted, divided or multiplied in the order they appear in the parameters.
+
+function operation(a, b) {
+   if (a + b == 24){
+      return "added";
+   }
+   if (a - b == 24) {
+      return "subtracted";
+   }
+   if (a * b == 24) {
+      return "multiplied";
+   }
+   if (a / b == 24) {
+      return "divided";
+   }
+   else {
+      return null;
+   }
+}
+
+testEqual ("operation", operation(15, 9), "added");
+testEqual ("operation", operation(26, 2), "subtracted");
+testEqual ("operation", operation(11, 11), null);
+
 
 // Exercise 20
 // Is the Word Singular or Plural?
