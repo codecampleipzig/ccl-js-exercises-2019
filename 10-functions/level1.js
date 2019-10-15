@@ -174,6 +174,17 @@ testEqual ("profitable Gamble", profitableGamble(0.9, 3, 2), true);
 //    divisibleByFive(-55) ➞ true
 //    divisibleByFive(37) ➞ false
 
+function divisibleByFive(a) {
+   if (a % 5 == 0) {
+      return true;
+   }
+   return false;
+}
+
+testEqual ("divisibleByFive", divisibleByFive(5), true);
+testEqual ("divisibleByFive", divisibleByFive(-55), true);
+testEqual ("divisibleByFive", divisibleByFive(37), false);
+
 // Exercise 11
 // Is the String Empty?
 // Create a function that returns true if a string is empty and false otherwise.
@@ -184,6 +195,17 @@ testEqual ("profitable Gamble", profitableGamble(0.9, 3, 2), true);
 // Notes
 //    A string containing only whitespaces " " does not count as empty.
 
+function isEmpty(string) {
+   if (string == "") {
+      return true;
+   }
+   return false;
+}
+
+testEqual ("isEmpty", isEmpty(""), true);
+testEqual ("isEmpty", isEmpty(" "), false);
+testEqual ("isEmpty", isEmpty("a"), false);
+
 // Exercise 12
 // Return the Last Element in an Array
 // Create a function that accepts an array and returns the last item in the array.
@@ -191,6 +213,15 @@ testEqual ("profitable Gamble", profitableGamble(0.9, 3, 2), true);
 //    getLastItem([1, 2, 3]) ➞ 3
 //    getLastItem(["cat", "dog", "duck"]) ➞ "duck"
 //    getLastItem([true, false, true]) ➞ true
+
+function getLastItem(array) {
+   // console.log (array.length -1)
+   return array[array.length -1];
+}
+
+testEqual ("getLastItem", getLastItem([1, 2, 3]), 3);
+testEqual ("getLastItem", getLastItem(["cat", "dog", "duck"]), "duck");
+testEqual ("getLastItem", getLastItem([true, false, true]), true);
 
 // Exercise 13
 // Find the Index (Part 1)
@@ -201,6 +232,8 @@ testEqual ("profitable Gamble", profitableGamble(0.9, 3, 2), true);
 //    search([1, 2, 3], 4) ➞ -1
 // Notes
 //    If the item is not present, return -1.
+
+
 
 // Exercise 14
 // Find the Index (part 2)
@@ -232,6 +265,10 @@ testEqual ("profitable Gamble", profitableGamble(0.9, 3, 2), true);
 // Notes
 //    You can use "string".charAt(index) to get the character at a certain index in a string
 //    "string".charAt(4) ➞ "i"
+
+function hasSpaces(string) {
+   
+}
 
 // Exercise 17
 // Extract City Facts
