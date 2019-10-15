@@ -3,3 +3,6 @@ if (typeof process.argv[2] == typeof "") {
 } else {
     console.log("something is not good")
 }
+// argv is just a shortcut for the lookup//
+//argv[0] is an excuteable /user/admin/bin/node//
+// argv[1] path to the  script//

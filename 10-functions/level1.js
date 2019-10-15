@@ -1,3 +1,10 @@
+// test function
+function testEqual(name, testValue, expected) {
+    if (testValue != expected) {
+        console.log("Test " + name + " failed: Expected:" +
+            expected + " Actual Value: " + testValue);
+    }
+}
 // Exercise 1
 // Create a function that takes two numbers as arguments and return their sum
 // Examples:
@@ -37,6 +44,12 @@
 //    addition(9) ➞ 10
 //    addition(-3) ➞ -2
 
+function increment(a) {
+    return (a + 1);
+}
+testEqual("increment", increment(6), 7)
+
+
 // Exercise 6
 // Create a function that finds the maximum *integer* range of a triangles third edge.
 // Examples
@@ -47,8 +60,15 @@
 //    (side1 + side2) - 1 = maximum range of third edge.
 //    Triangles have side lengths that are positive integers.
 
+function maxValue(a, b) {
+    return ((a + b) - 1);
+}
+testEqual("maxValue", maxValue(7, 5), 11)
+
 // Exercise 7
-// There is a single operator in JavaScript, capable of providing the remainder of a division operation. Two numbers are passed as parameters. The first parameter divided by the second parameter will have a remainder, possibly zero. Return that value.
+// There is a single operator in JavaScript, capable of providing the remainder of a division operation.
+// Two numbers are passed as parameters. The first parameter divided by the second parameter will have a remainder, 
+// possibly zero. Return that value. //
 // Examples
 //    remainder(1, 3) ➞ 1
 //    remainder(3, 4) ➞ 3
@@ -57,6 +77,12 @@
 // Notes
 //    The tests only use positive and negative integers.
 
+function remainder(a, b) {
+    return (a % b);
+}
+
+testEqual("remainder is ", remainder(4, 4), 0)
+
 // Exercise 8
 // The Farm Problem
 // You've got chickens (2 legs), cows (4 legs) and pigs (4 legs) on your farm. Return the total number of legs on your farm.
@@ -64,17 +90,21 @@
 //    animals(2, 3, 5) ➞ 36
 //    animals(1, 2, 3) ➞ 22
 //    animals(5, 2, 8) ➞ 50
-
-// Exercise 9
-// Profitable Gamble
-// Create a function that takes in three arguments (prob, prize, pay) and returns true if prob * prize > pay; otherwise return false.
-// To illustrate, profitableGamble(0.2, 50, 9) should yield true, since the net profit is 1 (0.2 * 50 - 9), and 1 > 0.
-// Examples
-//    profitableGamble(0.2, 50, 9) ➞ true
-//    profitableGamble(0.9, 1, 2) ➞ false
-//    profitableGamble(0.9, 3, 2) ➞ true
-// Notes
-//    A profitable gamble is a game that yields a positive net profit, where net profit is calculated in the following manner: net_outcome = probability_of_winning * prize - cost_of_playing.
+function totalLegs(chickens, cows, pigs) {
+    return (chickens * 2) + (cows * 4) + (pigs * 4)
+}
+testEqual("legs", totalLegs(2, 3, 5), 36)
+    // Exercise 9
+    // Profitable Gamble
+    // Create a function that takes in three arguments (prob, prize, pay) and returns true if prob * prize > pay; 
+    // otherwise return false.
+    // To illustrate, profitableGamble(0.2, 50, 9) should yield true, since the net profit is 1 (0.2 * 50 - 9), and 1 > 0.
+    // Examples
+    //    profitableGamble(0.2, 50, 9) ➞ true
+    //    profitableGamble(0.9, 1, 2) ➞ false
+    //    profitableGamble(0.9, 3, 2) ➞ true
+    // Notes
+    //    A profitable gamble is a game that yields a positive net profit, where net profit is calculated in the following manner: net_outcome = probability_of_winning * prize - cost_of_playing.
 
 // Exercise 10
 // Check if an Integer is Divisible By Five
@@ -109,8 +139,14 @@
 //    search([1, 5, 3], 5) ➞ 1
 //    search([9, 8, 3], 3) ➞ 2
 //    search([1, 2, 3], 4) ➞ -1
-// Notes
-//    If the item is not present, return -1.
+
+function search([a, b, c], d) {
+    x = [a, b, c];
+    return (x.indexOf(d));
+}
+testEqual("search", search([2, 3, 5] 8), -1)
+    // Notes
+    //    If the item is not present, return -1.
 
 // Exercise 14
 // Find the Index (part 2)
@@ -202,4 +238,4 @@
 //    findDigitAmount(56) ➞ 2
 //    findDigitAmount(7154) ➞ 4
 //    findDigitAmount(61217311514) ➞ 11
-//    findDigitAmount(0) ➞ 1
+//    findDigitAmount(0) ➞
