@@ -1,28 +1,38 @@
-function eq(lhs, rhs) {
+function eq(lhs, rhs, recursive) {
+
+    recursive = recursive ? "-r " : "";
+
+    console.log( recursive + "eq called");
 
     if (Array.isArray(lhs) && Array.isArray(rhs)) { 
-        console.log ('First condition met: both are arrays');
+        console.log (recursive + 'First condition met: both are arrays');
 
         if (lhs.length == rhs.length) {
-            console.log ('Second condition met: both are same length');
+            console.log (recursive + 'Second condition met: both are same length');
 
             for (var i=0; i<lhs.length; i++) {
-                if (lhs[i] != rhs[i]){
-                    console.log ('Index ' + i + ' of ' + (lhs.length-1) + ' not same: exit');
+                if (Array.isArray(lhs[i]) && Array.isArray(rhs[i])) { 
+                    if ( !eq (lhs[i], rhs[i], true) ) {
+                        return false
+                    }
+                } else if (lhs[i] != rhs[i]){
+                    console.error (recursive + 'Index ' + i + ' of ' + (lhs.length-1) + ' not same: exit');
 
                     return false;
                 }  
-                console.log ('Index ' + i + ' of ' + (lhs.length-1) + ' same');
+                console.log (recursive + 'Index ' + i + ' of ' + (lhs.length-1) + ' same');
 
             }
-        } 
-        console.log ('All checks passed');
-        return true;
+            return true;
+        }
+        console.log (recursive + 'Length not the same');
+        return false;
+        
     } 
-    console.log ('One or both not arrays: regular equality check');
+    console.log (recursive + 'One or both not arrays: regular equality check');
     return lhs == rhs;
 }
 
-eq ([1, 2, 3], [1, 2, 3]);
+eq ([1, 2, [4], 3], [1, 2, [4], 2]);
 
  
