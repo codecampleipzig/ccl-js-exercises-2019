@@ -9,6 +9,7 @@
 // 1. an array of numbers
 // 2. a 'callback' function - a function that is applied to each element of the array inside of the function map
 // Have map return a new array filled with numbers that are the result of using the callback function on each element of the input array.
+// Don't use Array.prototype.map
 
 // Example
 // map ([1, 2, 3, 4], addTwo) -> [3, 5, 7, 9]
@@ -17,6 +18,7 @@
 
 // Challenge 2
 // Create a function called forEach, that takes an array and a callback and runs the callback on each element of the array.
+// Don't use Array.prototype.forEach
 
 // Example
 // var alphabet = "";
@@ -28,6 +30,7 @@
 // Challenge 3
 // Create a function called filter that takes an array and a test-callback function.
 // filter should return an array that contains all the elements from the input array, for which the test function returns true, if applied to the element.
+// Don't use Array.prototype.filter
 
 // Example
 // filter ([2, 5, 3, 8, 10], function (num) {
