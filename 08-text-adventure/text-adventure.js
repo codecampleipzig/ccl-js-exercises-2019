@@ -110,7 +110,7 @@ function chooseFloor(floor){
    }
 }
 
-// funtion loop 8 times when you took something
+// funtion loop 8 times when you did somthing you shouldnt  do
 // garderoben floor
 function cellarFloor(){
    var action = prompt ("Are you going to dance or rather have a drink? ");
@@ -180,6 +180,7 @@ function cellarFloor(){
       points = 1;
    }
 }
+
 chooseFloor (floor);
 
 

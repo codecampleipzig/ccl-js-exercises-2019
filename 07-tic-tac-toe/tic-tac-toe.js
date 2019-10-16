@@ -12,7 +12,6 @@ var board = [
      ["2|", " |",  " |",  " |", "\n"],
  ];
 
-
 function ticTacToe(){
     
     for(var i = 0; i < boardEmpty.length; i++){

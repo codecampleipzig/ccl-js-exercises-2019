@@ -95,6 +95,15 @@ testEqual("getLastItem", getLastItem([true, false, true]), true);
 // Notes
 // You can expect only integers ranging from 1 to 12 as test input.
 
+function monthName(num) {
+   
+   var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+   return month[num - 1]; 
+}
+
+testEqual ("month name", monthName(5), "May");
+
+
 // Exercise 5
 // Generate a Countdown of Numbers in an Array
 // Create a function that takes a number as an argument and returns an array of numbers counting down from this number to zero.
@@ -102,6 +111,17 @@ testEqual("getLastItem", getLastItem([true, false, true]), true);
 // countdown(5) ➞ [5, 4, 3, 2, 1, 0]
 // countdown(1) ➞ [1, 0]
 // countdown(0) ➞ [0]
+
+function countdown (num) {
+
+   var countdown = [];
+   for (var i = num; i >= 0; i = i - 1) {
+      countdown.push(i);
+   }
+   return countdown;
+}
+
+testEqual ("countdown", countdown(5), [5, 4, 3, 2, 1, 0]);
 
 // Exercise 6
 // Get Student Names
@@ -113,7 +133,21 @@ testEqual("getLastItem", getLastItem([true, false, true]), true);
 //   { name: "John" }
 // ]) ➞ ["Steve", "Mike", "John"]
 
-// Exercise 7
+function getStudentNames (array) {
+   var result = [];
+
+   for (var i = 0; i < array.length; i++) {
+      result.push (array[i].name);
+   }
+   return result;
+}
+
+testEqual ("student names", getStudentNames([
+   { name: "Steve" }, 
+   {name: "Mike" },
+   { name: "John" }]), ["Steve", "Mike", "John"]);
+
+   // Exercise 7
 // Maximum Difference
 // Given an array of integers, return the difference between the largest and smallest integers in the array.
 // Examples
@@ -135,7 +169,7 @@ function difference(array) {
    }return max - min;
 }
 
-testEqual ("difference", difference([10, 15, 20, 2, 10, 6]), 18);
+
 testEqual ("difference", difference([-3, 4, -9, -1, -2, 15]), 24);
 
 // Exercise 8
