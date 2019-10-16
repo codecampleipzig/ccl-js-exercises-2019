@@ -111,6 +111,19 @@ testEqual("Exercise 4.4", find_index(["Pineapple", "Orange", "Grape", "Apple"], 
 // ctoa("[") ➞ 91
 // ctoa("\") ➞ 92
 
+function ctoa(a) {
+   return a.charCodeAt(a);
+}
+
+testEqual("Exercise 5.1", ctoa("A"), 65);
+testEqual("Exercise 5.2", ctoa("m"), 109);
+testEqual("Exercise 5.3", ctoa("["), 91);
+testEqual("Exercise 5.4", ctoa("\\"), 92);
+// if the argument evaluates to either undefined() or null (null), test throws exception - TypeError: Cannot read property 'charCodeAt' of null
+// testEqual("Exercise 5.5", ctoa(null), 0);
+
+// console.log(ctoa("\\"));
+
 // Exercise 6
 // Count Syllables
 // Create a function that counts the number of syllables a word has. Each syllable is separated with a dash -.
@@ -119,6 +132,22 @@ testEqual("Exercise 4.4", find_index(["Pineapple", "Orange", "Grape", "Apple"], 
 // numberSyllables("beau-ti-ful") ➞ 3
 // numberSyllables("mon-u-men-tal") ➞ 4
 // numberSyllables("on-o-mat-o-poe-ia") ➞ 6
+
+function numberSyllables(sentence) {
+   var subStrings = sentence.split("-");
+   // if (subStrings.length < 2) {
+   //    //console.log("String has less than two syllables!");
+   //    return -1;
+   // }
+   return subStrings.length;
+}
+
+//console.log(numberSyllables(""));
+
+testEqual("Exercise 6.1", numberSyllables("buf-fet"), 2);
+testEqual("Exercise 6.2", numberSyllables("beau-ti-ful"), 3);
+testEqual("Exercise 6.3", numberSyllables("mon-u-men-tal"), 4);
+testEqual("Exercise 6.4", numberSyllables("on-o-mat-o-poe-ia"), 6);
 
 // Exercise 7
 // Semantic Versioning
