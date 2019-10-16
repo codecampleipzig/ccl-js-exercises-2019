@@ -1,3 +1,25 @@
+function eq(lhs, rhs) {
+   if (Array.isArray(lhs) && Array.isArray(rhs) &&
+      lhs.length == rhs.length) {
+      for (var i = 0; i < lhs.length; i++) {
+         if (!eq(lhs[i], rhs[i])) {
+            return false;
+         }
+      }
+      return true;
+   }
+   else {
+      return lhs === rhs;
+   }
+}
+
+function testEqual(testName, testValue, expectedValue) {
+   if (!eq(testValue, expectedValue)) {
+      console.log("Test failed: " + testName + " Expected: " + expectedValue +
+         " Actual: " + testValue);
+   }
+}
+
 // Exercise 1
 // Reverse an Array
 // Write a function to reverse an array.
@@ -5,6 +27,26 @@
 // reverse([1, 2, 3, 4]) ➞ [4, 3, 2, 1]
 // reverse([9, 9, 2, 3, 4]) ➞ [4, 3, 2, 9, 9]
 // reverse([]) ➞ []
+
+function reverse(array) {
+   if (Array.isArray(array) == false) {
+      throw Error("Error in Reverse!!!");
+   }
+   var result = [];
+   for (var i = array.length - 1; i >= 0; i = i - 1) {
+      result.push(array[i]);
+   }
+   return result;
+}
+
+var myArray = [1, 2, 3, 4];
+testEqual("testEqual", [4, 3, 2, 1], [4, 3, 2, 1]);
+testEqual("reverse", reverse(myArray), [4, 3, 2, 1]);
+testEqual("reverse is pure", myArray, [1, 2, 3, 4]);
+
+testEqual("reverse", reverse([9, 9, 2, 3, 4]), [4, 3, 2, 9, 9]);
+testEqual("reverse", reverse([]), []);
+
 
 // Exercise 2
 // Return the Last Element in an Array
@@ -14,6 +56,12 @@
 // getLastItem(["cat", "dog", "duck"]) ➞ "duck"
 // getLastItem([true, false, true]) ➞ true
 
+function getLastItem(array) {
+   return array[array.length - 1];
+}
+
+testEqual('getLastItem', getLastItem([1, 2, 3]), 3);
+
 // Exercise 3
 // Check if an Array Contains a Given Number
 // Write a function to check if an array contains a particular number.
@@ -22,6 +70,15 @@
 // check([1, 1, 2, 1, 1], 3) ➞ false
 // check([5, 5, 5, 6], 5) ➞ true
 // check([], 5) ➞ false
+
+function check(array, num) {
+   for (var i = 0; i < array.length; i++) {
+      if (array[i] == num) {
+         return true;
+      }
+   }
+   return false;
+}
 
 // Exercise 4
 // Convert Number to Corresponding Month Name
@@ -73,6 +130,32 @@
 // difference([-3, 4, -9, -1, -2, 15]) ➞ 24
 // // 15 - (-9) = 24
 
+function max (array) {
+   var result = array[0];
+   for (var i = 1; i < array.length; i++) {
+      if (array[i] > result) {
+         result = array[i];
+      }
+   }
+   return result;
+}
+
+function min (array) {
+   var result = array[0];
+   for (var i = 1; i < array.length; i++) {
+      if (array[i] < result) {
+         result = array[i];
+      }
+   }
+   return result;
+}
+
+function difference (array) {
+   return max (array) - min (array);
+}
+
+testEqual ("difference", difference ([10, 15, 20, 2, 10, 6]), 18);
+
 // Exercise 8
 // Secret Society
 // A group of friends have decided to start a secret society. The name will be the first letter of each of their names, sorted in alphabetical order.
@@ -83,3 +166,5 @@
 // societyName(["Phoebe", "Chandler", "Rachel", "Ross", "Monica", "Joey"]) ➞ "CJMPRR"
 // Notes
 // The secret society's name should be entirely uppercased.
+
+console.log("All tests completed!");
