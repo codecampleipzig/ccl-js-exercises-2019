@@ -1,3 +1,23 @@
+function testEqual (name, testValue, expected) {
+   if (Array.isArray(expected)){
+      if (deepEq(testValue, expected)) {
+         console.log('Deep Eq ' + name + 'failed.')
+      }
+   }
+   else if (testValue != expected) {
+      console.log('Test ' + name + ' failed: Expected: ' + expected + '. Actual value: ' + testValue);
+   }
+}
+
+function deepEq (testValue, expected) {
+   for ( var i = 0; i < expected.length; i++) {
+      if (expected[i] != testValue[i]) {
+         return true;
+      }
+      return false;
+   }
+}
+
 // Exercise 1
 // Reverse an Array
 // Write a function to reverse an array.
@@ -5,6 +25,13 @@
 // reverse([1, 2, 3, 4]) ➞ [4, 3, 2, 1]
 // reverse([9, 9, 2, 3, 4]) ➞ [4, 3, 2, 9, 9]
 // reverse([]) ➞ []
+
+//why is this not working?
+function reverseArray(array){
+   return array.reverse();
+}
+
+testEqual ("1.1 reverseArray", reverseArray([1, 2]), [2, 1]);
 
 // Exercise 2
 // Return the Last Element in an Array
@@ -14,6 +41,12 @@
 // getLastItem(["cat", "dog", "duck"]) ➞ "duck"
 // getLastItem([true, false, true]) ➞ true
 
+function lastElement (array) {
+   return array.pop();
+}
+
+testEqual ("2.1 lastElement", lastElement([1, 2]), 2);
+
 // Exercise 3
 // Check if an Array Contains a Given Number
 // Write a function to check if an array contains a particular number.
@@ -22,6 +55,13 @@
 // check([1, 1, 2, 1, 1], 3) ➞ false
 // check([5, 5, 5, 6], 5) ➞ true
 // check([], 5) ➞ false
+
+function check(array, number) {
+   return array.includes(number);
+}
+
+testEqual ("3.1 check", check([1,2,3], 2), true);
+testEqual ("3.2 check", check([1,2,3], 4), false);
 
 // Exercise 4
 // Convert Number to Corresponding Month Name
