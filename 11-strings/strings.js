@@ -1,5 +1,3 @@
-
-
 function testEqual(name, testValue, expected) {
    if (testValue != expected) {
       console.log ("Test " + name + " failed. Expected : " + expected + " Actual value: " + testValue);
@@ -8,7 +6,6 @@ function testEqual(name, testValue, expected) {
       console.log ("Bravissimo!!!!!")
    }
 }
-
 
 // Exercise 1
 // Is the String Empty?
@@ -113,7 +110,6 @@ testEqual ("ctoa", ctoa("\\"), 92);
 // numberSyllables("mon-u-men-tal") ➞ 4
 // numberSyllables("on-o-mat-o-poe-ia") ➞ 6
 
-
 function numberSyllables(str) {
    var counterDash = 0;
    for (var i = 0; i < str.length; i++){
@@ -124,7 +120,10 @@ function numberSyllables(str) {
    return counterDash + 1;
 }
 
-console.log (numberSyllables("mon-u-men-tal"))
+testEqual ("numberSyllables", numberSyllables("buf-fet"), 2);
+testEqual ("numberSyllables", numberSyllables("beau-ti-ful"), 3);
+testEqual ("numberSyllables", numberSyllables("mon-u-men-tal"), 4);
+testEqual ("numberSyllables", numberSyllables("on-o-mat-o-poe-ia"), 6);
 
 // Exercise 7
 // Semantic Versioning
@@ -143,6 +142,25 @@ console.log (numberSyllables("mon-u-men-tal"))
 // retrieveMinor("2.1.0") ➞ "1"
 // retrievePatch("2.1.0") ➞ "0"
 
+function retrieveMajor(str) {
+   var major = str.split(".");
+   return major[0];
+}
+
+function retrieveMinor(str) {
+   var minor = str.split(".");
+   return minor[1];
+}
+
+function retrievePatch(str) {
+   var patch = str.split(".");
+   return patch[2];
+}
+
+testEqual ("retrieveMajor", retrieveMajor("10.1.0"), 10);
+testEqual ("retrieveMinor", retrieveMinor("2.1.0"), 1);
+testEqual ("retrievePatch", retrievePatch("2.1.0"), 0);
+
 // Exercise 8
 // Join Two Portions of a Path
 // Write a function that receives two portions of a path and joins them. The portions will be joined with the "/" separator. There could be only one separator and if it is not present it should be added.
@@ -151,6 +169,18 @@ console.log (numberSyllables("mon-u-men-tal"))
 //    joinPath("portion1/", "portion2") ➞ "portion1/portion2"
 //    joinPath("portion1", "/portion2") ➞ "portion1/portion2"
 //    joinPath("portion1/", "/portion2") ➞ "portion1/portion2"
+
+function joinPath(str1, str2) {
+   var part1 = str1.split("/");
+   var part2 = str2.split("/");
+   return part1[0] + "/" + part2[part2.length -1];
+}
+
+testEqual ("joinPath", joinPath("portion1", "portion2"), "portion1/portion2");
+testEqual ("joinPath", joinPath("portion1/", "portion2"), "portion1/portion2");
+testEqual ("joinPath", joinPath("portion1", "/portion2"), "portion1/portion2");
+testEqual ("joinPath", joinPath("portion1/", "//portion2"), "portion1/portion2");
+
 
 // Exercise 9
 // Format Number with Comma(s) Separating Thousands

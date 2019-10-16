@@ -38,11 +38,9 @@ function reverse(array) {
    return result;
 }
 
-testEqual ("reverse", reverse([1, 2, 3, 4]), [4, 3, 2, 1])
-
-// testEqual("reverse", reverse([1, 2, 3, 4]), [4, 3, 2, 1]);
-// testEqual("reverse", reverse([9, 9, 2, 3, 4]), [4, 3, 2, 9, 9]);
-// testEqual("reverse", reverse([]), []);
+testEqual("reverse", reverse([1, 2, 3, 4]), [4, 3, 2, 1]);
+testEqual("reverse", reverse([9, 9, 2, 3, 4]), [4, 3, 2, 9, 9]);
+testEqual("reverse", reverse([]), []);
 
 // Exercise 2
 // Return the Last Element in an Array
@@ -60,7 +58,6 @@ testEqual("getLastItem", getLastItem([1, 2, 3]), 3);
 testEqual("getLastItem", getLastItem(["cat", "dog", "duck"]), "duck");
 testEqual("getLastItem", getLastItem([true, false, true]), true);
 
-
 // Exercise 3
 // Check if an Array Contains a Given Number
 // Write a function to check if an array contains a particular number.
@@ -70,7 +67,16 @@ testEqual("getLastItem", getLastItem([true, false, true]), true);
 // check([5, 5, 5, 6], 5) ➞ true
 // check([], 5) ➞ false
 
+function check(array, num) {
+   for (var i = 0; i < array.length; i++) {
+      if (array[i] == num) {
+         return true;
+      }
+   }
+   return false;
+}
 
+testEqual ("check", check([1, 2, 3, 4, 5], 3), true);
 
 // Exercise 4
 // Convert Number to Corresponding Month Name
