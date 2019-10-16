@@ -86,6 +86,13 @@ testEqual ("3.2 check", check([1,2,3], 4), false);
 // Notes
 // You can expect only integers ranging from 1 to 12 as test input.
 
+function monthName(monthNo) {
+   var monthsOfTheYearAsName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+   return monthsOfTheYearAsName[monthNo - 1];
+}
+
+testEqual("monthName: ", monthName(3), "March");
+
 // Exercise 5
 // Generate a Countdown of Numbers in an Array
 // Create a function that takes a number as an argument and returns an array of numbers counting down from this number to zero.
@@ -93,6 +100,18 @@ testEqual ("3.2 check", check([1,2,3], 4), false);
 // countdown(5) ➞ [5, 4, 3, 2, 1, 0]
 // countdown(1) ➞ [1, 0]
 // countdown(0) ➞ [0]
+
+function countdown(x) {
+   var array = [x];
+   
+   for (var i = 1; i <= x; i++) {
+      array.push(x - i);
+   }
+
+   return array;
+}
+
+testEqual("countdown: ", countdown(5), [5, 4, 3, 2, 1, 0]);
 
 // Exercise 6
 // Get Student Names
@@ -104,6 +123,16 @@ testEqual ("3.2 check", check([1,2,3], 4), false);
 //   { name: "John" }
 // ]) ➞ ["Steve", "Mike", "John"]
 
+
+   function getStudentNames(studentNames) {
+      var result = [];
+      for (var i = 0; i < studentNames.length; i++) {
+         result.push(studentNames[i].name);
+      } 
+      return result;
+   }
+//console.log (getStudentNames([{name: "Steve"}, {name: "Mike"}, {name: "John"}]));
+   
 // Exercise 7
 // Maximum Difference
 // Given an array of integers, return the difference between the largest and smallest integers in the array.
@@ -123,3 +152,26 @@ testEqual ("3.2 check", check([1,2,3], 4), false);
 // societyName(["Phoebe", "Chandler", "Rachel", "Ross", "Monica", "Joey"]) ➞ "CJMPRR"
 // Notes
 // The secret society's name should be entirely uppercased.
+
+function compare(a, b) {
+   a = a.toUpperCase();
+   b = b.toUpperCase();
+   if (a < b) {
+      return -1;
+   }
+   if (b < a) {
+      return 1;
+   } 
+   return 0;
+}
+
+function societyName(names) {
+   names.sort(compare);
+   var result = "";
+   for (var i = 0; i < names.length; i++) {
+      result += names[i][0].toUpperCase();
+   } 
+   return result;
+}
+
+console.log(societyName(["phoebe", "chandler", "Rachel", "Ross", "Monica", "Joey"]))
