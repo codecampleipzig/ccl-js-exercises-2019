@@ -94,6 +94,8 @@ console.log (Empty(""))
 // formatNum(1000) ➞ "1,000"
 // formatNum(100000) ➞ "100,000"
 // formatNum(20) ➞ "20"
+// Notes
+// You can use the function String to convert a number to a string: String (123) ➞ "123"
 
 // Exercise 10
 // H4ck3r Sp34k
