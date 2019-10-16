@@ -1,6 +1,20 @@
+function eq (lhs, rhs) {
+
+   if (Array.isArray(lhs) && Array.isArray(rhs) && lhs.length == rhs.length){
+      for ( var i = 0; i < lhs.length; i++) { // create a foor loo, bind the loob variable, define the loop check condition 
+         // (as long as i is leth than element.lengt) and enter the loop body. At the end we increment
+         if ( !eq (lhs[i], rhs[i]) ) { 
+            return false;
+         }
+      } return true;  // after we exit the loop we always! have to give back a value. Also incrementing happens here (loop Step)
+   }
+   else {
+      return lhs == rhs;
+   } 
+}
 
 function testEqual(name, testValue, expected) {
-   if (testValue != expected) {
+   if ( !eq(testValue, expected)) {
       console.log ("Test " + name + " failed. Expected : " + expected + " Actual value: " + testValue);
    }
    else {
@@ -17,8 +31,14 @@ function testEqual(name, testValue, expected) {
 // reverse([]) ➞ []
 
 function reverse(array) {
-   return array.reverse();
+   var result = [];
+   for (var i = array.length -1; i >= 0; i = i - 1) {
+      result.push(array[i]);
+   }
+   return result;
 }
+
+testEqual ("reverse", reverse([1, 2, 3, 4]), [4, 3, 2, 1])
 
 // testEqual("reverse", reverse([1, 2, 3, 4]), [4, 3, 2, 1]);
 // testEqual("reverse", reverse([9, 9, 2, 3, 4]), [4, 3, 2, 9, 9]);
@@ -35,6 +55,7 @@ function reverse(array) {
 function getLastItem(array){
    return array[array.length -1];
 }
+
 testEqual("getLastItem", getLastItem([1, 2, 3]), 3);
 testEqual("getLastItem", getLastItem(["cat", "dog", "duck"]), "duck");
 testEqual("getLastItem", getLastItem([true, false, true]), true);
@@ -48,6 +69,8 @@ testEqual("getLastItem", getLastItem([true, false, true]), true);
 // check([1, 1, 2, 1, 1], 3) ➞ false
 // check([5, 5, 5, 6], 5) ➞ true
 // check([], 5) ➞ false
+
+
 
 // Exercise 4
 // Convert Number to Corresponding Month Name
@@ -99,9 +122,26 @@ testEqual("getLastItem", getLastItem([true, false, true]), true);
 // difference([-3, 4, -9, -1, -2, 15]) ➞ 24
 // // 15 - (-9) = 24
 
+function difference(array) {
+   var max = array[0];
+   var min = array[0];
+   for (var i = 1; i < array.length; i++) {
+      if (array[i] > max) {
+         max = array[i];
+      }
+      if (array[i] < min){
+         min = array[i];
+      }
+   }return max - min;
+}
+
+testEqual ("difference", difference([10, 15, 20, 2, 10, 6]), 18);
+testEqual ("difference", difference([-3, 4, -9, -1, -2, 15]), 24);
+
 // Exercise 8
 // Secret Society
-// A group of friends have decided to start a secret society. The name will be the first letter of each of their names, sorted in alphabetical order.
+// A group of friends have decided to start a secret society. The name will be the first letter of each of their names, 
+// sorted in alphabetical order.
 // Create a function that takes in an array of names and returns the name of the secret society.
 // Examples
 // societyName(["Adam", "Sarah", "Malcolm"]) ➞ "AMS"
@@ -109,3 +149,14 @@ testEqual("getLastItem", getLastItem([true, false, true]), true);
 // societyName(["Phoebe", "Chandler", "Rachel", "Ross", "Monica", "Joey"]) ➞ "CJMPRR"
 // Notes
 // The secret society's name should be entirely uppercased.
+
+function societyName(array) {
+   var result = "";
+   array.sort()
+   for (var i = 0; i < array.length; i++) {
+      result += (array[i][0]);
+   }
+   return result;
+}
+
+testEqual ("societyName", societyName(["Adam", "Sarah", "Malcolm"]), "AMS");
