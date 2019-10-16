@@ -12,7 +12,7 @@ function eq (lhs, rhs){
     if ( Array.isArray (lhs) && Array.isArray(rhs) && lhs.length == rhs.length) {
         console.log ("Conditions are evaluated and true: lhs is an array, rhs is an array and both have the same length.")
         for (var i = 0; i < lhs.length; i++) {
-            if (lhs[i] != rhs[i]) {
+            if (!eq (lhs[i] != rhs[i])) {
                 console.log ("The element from the array lhs with the value " + lhs[i] + " is NOT EQUAL the element from the array rhs with the value " + rhs[i] + ".");
                 return false; 
             }
