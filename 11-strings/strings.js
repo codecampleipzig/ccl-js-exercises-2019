@@ -10,41 +10,52 @@
 
 // Exercise 2
 // Compare Strings by Count of Characters
-// Create a function that takes two strings as arguments and return either true or false depending on whether the total number of characters in the first string is equal to the total number of characters in the second string.
+// Create a function that takes two strings as arguments and return either
+// true or false depending on whether the total number of characters in the first string
+// is equal to the total number of characters in the second string.
 // Examples
 // comp("AB", "CD") ➞ true
 // comp("ABC", "DE") ➞ false
 // comp("hello", "edabit") ➞ false
-
-// Exercise 3
-// Check String for Spaces
-// Create a function that returns true if a string contains any spaces.
-// Examples
-// hasSpaces("hello") ➞ false
-// hasSpaces("hello, world") ➞ true
-// hasSpaces(" ") ➞ true
-// hasSpaces("") ➞ false
-// hasSpaces(",./!@#") ➞ false
-// Notes
-// An empty string does not contain any spaces.
-
-// Exercise 4
-// Find the Index
-// Create a function that takes an array and a string as arguments and return the index of the string.
-// Examples
-// find_index(["hi", "edabit", "fgh", "abc"], "fgh") ➞ 2
-// find_index(["Red", "blue", "Blue", "Green"], "blue") ➞ 1
-// find_index(["a", "g", "y", "d"], "d") ➞ 3
-// find_index(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple") ➞ 0
-
-// Exercise 5
-// Char-to-ASCII
-// Create a function that returns the ASCII value of the passed in character.
-// Examples
-// ctoa("A") ➞ 65
-// ctoa("m") ➞ 109
-// ctoa("[") ➞ 91
-// ctoa("\") ➞ 92
+function compare(a, b) {
+    return a.length == b.length;
+}
+console.log(compare("nick", "kaab"))
+    // Exercise 3
+    // Check String for Spaces
+    // Create a function that returns true if a string contains any spaces.
+    // Examples
+    // hasSpaces("hello") ➞ false
+    // hasSpaces("hello, world") ➞ true
+    // hasSpaces(" ") ➞ true
+    // hasSpaces("") ➞ false
+    // hasSpaces(",./!@#") ➞ false
+    // Notes
+    // An empty string does not contain any spaces.
+function spacce(a) {
+    return a.includes(" ");
+}
+console.log(spacce())
+    // Exercise 4
+    // Find the Index
+    // Create a function that takes an array and a string as arguments and return the index of the string.
+    // Examples
+    // find_index(["hi", "edabit", "fgh", "abc"], "fgh") ➞ 2
+    // find_index(["Red", "blue", "Blue", "Green"], "blue") ➞ 1
+    // find_index(["a", "g", "y", "d"], "d") ➞ 3
+    // find_index(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple") ➞ 0
+function inndex([array], string) {
+    return [string];
+}
+console.log(inndex([ak, ki, ji, li], nick))
+    // Exercise 5
+    // Char-to-ASCII
+    // Create a function that returns the ASCII value of the passed in character.
+    // Examples
+    // ctoa("A") ➞ 65
+    // ctoa("m") ➞ 109
+    // ctoa("[") ➞ 91
+    // ctoa("\") ➞ 92
 
 // Exercise 6
 // Count Syllables

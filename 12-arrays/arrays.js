@@ -6,6 +6,12 @@
 // reverse([9, 9, 2, 3, 4]) ➞ [4, 3, 2, 9, 9]
 // reverse([]) ➞ []
 
+function something(array) {
+    array.reverse();
+    return array
+}
+console.log(something([1, 2, 3]))
+
 // Exercise 2
 // Return the Last Element in an Array
 // Create a function that accepts an array and returns the last item in the array.
@@ -25,7 +31,8 @@
 
 // Exercise 4
 // Convert Number to Corresponding Month Name
-// Create a function that takes a number (from 1 to 12) and returns its corresponding month name as a string. For example, if you're given 3 as input, your function should return "March", because March is the 3rd month.
+// Create a function that takes a number (from 1 to 12) and returns its corresponding month name as a string. 
+// For example, if you're given 3 as input, your function should return "March", because March is the 3rd month.
 // Number	Month Name
 // 1	      January
 // 2	      February
