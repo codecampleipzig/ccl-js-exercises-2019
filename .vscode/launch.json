@@ -7,8 +7,14 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceFolder}/02-hello-world/hello-world.js"
+            "name": "Heap Playground",
+            "program": "${workspaceFolder}/00-playground/heap-playground.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Arrays Playground",
+            "program": "${workspaceFolder}/00-playground/arrays-playground.js"
         }
     ]
 }

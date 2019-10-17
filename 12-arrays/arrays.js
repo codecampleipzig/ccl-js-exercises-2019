@@ -1,7 +1,7 @@
 function eq(lhs, rhs) {
    if (Array.isArray(lhs) && Array.isArray(rhs) && lhs.length == rhs.length) {
       for (var i = 0; i < lhs.length; i++) {
-         if (!eq(lhs[i], rhs[i])) {
+         if (!eq(lhs[i], rhs[i])) { // if(!eq(lhs[i], rhs[i])) === if(eq(lhs[i], rhs[i]) == false)
             return false;
          }
       }
