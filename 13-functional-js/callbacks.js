@@ -4,12 +4,36 @@
 // isPositive (3) -> true
 // isPositive (-5) -> false
 
+function isPositive(number) {
+   if ( number >= 0 ) {
+      return true;
+   } else {
+      return false;
+   }
+}
+
+// console.log(isPositive(2));
+
 // Exercise 1. 1
 // Create a function which takes an array of numbers and returns an array which just contains the numbers that are positive or zero from that array.
 // Use the builtin Array method: filter
 // Notes: Use the function isPositive from Exercise 4.0
 // Example:
 // filterPositive ([-3, 5, -7, 6]) -> [5, 6]
+
+function filterPositive(array) {
+   // Old Approach:
+      // var posArray = [];
+      // for ( var i = 0; i < array.length; i++) {
+      //    if (isPositive(array[i])) {
+      //       posArray.push(array[i]);
+      //    }
+      // }
+      // return posArray;
+   return array.filter(isPositive);
+}
+
+// console.log(filterPositive([2, 3, -1, 0]));   // [2, 3, 0]
 
 // Exercise 2.0
 // Write a function which compares two numbers a and b
@@ -21,6 +45,19 @@
 // compareNumbers (3, 1) -> 1
 // compareNumbers (1, 3) -> -1
 // compareNumbers (3, 3) -> 0
+
+function compareNumbers(a, b) {
+   if (a > b)
+      return 1;
+   else if (b > a)
+      return -1;
+   return 0;
+
+}
+
+// console.log(compareNumbers(3, 1));
+// console.log(compareNumbers(1, 3));
+// console.log(compareNumbers(3, 3));
 
 // Exercise 2.1
 // The builtin array method sort() takes an optional argument:
@@ -36,10 +73,27 @@
 // sortNumberArray ([6, 2, 4, 7]) -> [2, 4, 6, 7]
 // sortNumberArray ([7, 10, 1]) -> [1, 7, 10]
 
+function sortNumberArray (array) {
+   return array.sort (compareNumbers)
+}
+
+// console.log (sortNumberArray([6, 2, 4, 7]));
+
 // Exercise 3
 // Create a function which takes an array of strings and returns a new array, which contains the same strings, but in uppercase. But don't use a loop.
 // Use the builtin Array method: map
 // Try using an array literal as the argument to map.
+
+function stringToUpperCase (string) {
+   return string.toUpperCase();
+}
+
+
+ function arrayToUpperCase (array) {
+    return array.map (stringToUpperCase)
+ }
+
+ console.log(arrayToUpperCase (["sdfhsdhfk, sadfhhfjdjs, sdfjhsdjkfhj", "sdjfhjkasdhkfhkshdkfhjkhdsjk!"]))
 
 // Exercise 4
 // Create a function which takes an array of strings and returns the first Element in the array, which starts with 'A'
