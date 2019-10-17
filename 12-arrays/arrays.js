@@ -81,13 +81,14 @@ console.log (check([], 5));
 /*
 
 Solution 1 to Exercise 4
-*/
+
 function monthName (monthNumber){
    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
    return months[monthNumber - 1];
 }
 console.log (monthName(3));
 
+*/
 
 /*
 
@@ -111,6 +112,43 @@ function monthName (monthnumber){
 }
 
 console.log (monthName (3);
+*/
+
+/*
+Iko's Solution to Exercise 4
+
+function monthName (X){
+   var months = {
+   1:"January",
+   2:"February",
+   3:"March",
+   4:"April",
+   5:"May",
+   6:"June",
+   7:"July",
+   8:"August",
+   9:"September",
+   10:"October",
+   11:"November",
+   12:"December",
+   } 
+   return (months[X]);
+}
+
+console.log (monthName (3));
+*/
+
+/*
+
+Array solution to exercise 4
+
+function Array (X){
+   var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+   return months [(X-1)];
+}
+
+console.log (Array (5));
+
 */
 
 // Exercise 5
