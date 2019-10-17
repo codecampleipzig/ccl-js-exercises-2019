@@ -141,7 +141,6 @@ testEqual ("countdown", countdown(5), [5, 4, 3, 2, 1, 0]);
 
 function getStudentNames (array) {
    var result = [];
-
    for (var i = 0; i < array.length; i++) {
       result.push (array[i].name);
    }
@@ -151,7 +150,8 @@ function getStudentNames (array) {
 testEqual ("student names", getStudentNames([
    { name: "Steve" }, 
    {name: "Mike" },
-   { name: "John" }]), ["Steve", "Mike", "John"]);
+   { name: "John" }]), ["Steve", "Mike", "John"]
+);
 
    // Exercise 7
 // Maximum Difference
@@ -174,7 +174,6 @@ function difference(array) {
       }
    }return max - min;
 }
-
 
 testEqual ("difference", difference([-3, 4, -9, -1, -2, 15]), 24);
 
