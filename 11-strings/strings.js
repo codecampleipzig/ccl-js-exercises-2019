@@ -29,11 +29,11 @@ function emptyString(x){
 // comp("ABC", "DE") ➞ false
 // comp("hello", "edabit") ➞ false
 
-function stringCount(x, y){
-   return (x.length == y.length)
+function comp(x, y){
+   return x.length == y.length;
 }   
 
-//console.log(stringCount("AC","DE"))
+console.log(comp("AC","DEFR"))
 
 
 // Exercise 3
@@ -57,7 +57,7 @@ function checker(x){
    return false;
 }
 
-console.log(checker("hello, world"))
+console.log(checker("hello,world"))
 
 // Exercise 4
 // Find the Index
@@ -68,8 +68,15 @@ console.log(checker("hello, world"))
 // find_index(["a", "g", "y", "d"], "d") ➞ 3
 // find_index(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple") ➞ 0
 
+function find_index(array, string) {
+   for (var i = 0; i < array.length; i++) {
+      if (string == array[i]) {
+      return i;
+      }
+   }
+}
 
-
+console.log('The index number of the droid you are looking for is: ', find_index(['bjoern','andres','gabe','moritz'],'andres'));
 
 // Exercise 5
 // Char-to-ASCII

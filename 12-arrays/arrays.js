@@ -6,11 +6,16 @@
 // reverse([9, 9, 2, 3, 4]) ➞ [4, 3, 2, 9, 9]
 // reverse([]) ➞ []
 
-function reverser(x) {
-   return x.reverse();
-}
+var reverseArray = [];
 
-console.log(reverser([1, 2, 3, 4, 5]))
+function reverse (array) {
+   for (var i = array.length - 1; i >= 0; i = i - 1) {
+      reverseArray.push(array[i]);
+   }
+   return reverseArray;
+}
+console.log(reverse([1, 2, 3, 4, 5]));
+
 
 // Exercise 2
 // Return the Last Element in an Array
@@ -20,11 +25,11 @@ console.log(reverser([1, 2, 3, 4, 5]))
 // getLastItem(["cat", "dog", "duck"]) ➞ "duck"
 // getLastItem([true, false, true]) ➞ true
 
-function last(y) {
-   return y[y.length -1];
+function getLastItem (array) {
+   return array[array.length - 1];
 }
 
-console.log(last(["cat", "dog", "duck"]))
+console.log(getLastItem(["cat", "dog", "duck"]));
 
 // Exercise 3
 // Check if an Array Contains a Given Number
@@ -35,8 +40,25 @@ console.log(last(["cat", "dog", "duck"]))
 // check([5, 5, 5, 6], 5) ➞ true
 // check([], 5) ➞ false
 
+function check (array, x) {
+   for (var i = 0; i < array.length; i++) {
+      if (x == array[i]) {
+         console.log("This number " + x + " is in the array.");
+      }
+   }
+}
 
+console.log(check ([1,2,4,5,7,9],4));
 
+function checkGabe (array, x) {
+   for (var i = 0; i < array.length; i++) {
+      if (x == array[i]) {
+         return true;
+      }
+   }
+}
+
+console.log(checkGabe ([1,2,4,5,7,9],4));
 
 // Exercise 4
 // Convert Number to Corresponding Month Name
