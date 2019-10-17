@@ -45,13 +45,13 @@ function filterPositive(func, array){
 
 function compareNumbers (arg1, arg2) {
    if (arg1 > arg2) {
-      return 1;
+      return -1;
    }
    else if (arg1 == arg2) {
       return 0;
    }
    else {
-      return -1;
+      return 1;
    }
 }
 
@@ -77,14 +77,21 @@ function sortNumberArray(func, array){
    return array.sort(func);
 }
 
-console.log(sortNumberArray(compareNumbers, [6,2,4,7]));
-console.log(sortNumberArray(compareNumbers, [7,10,1]));
+//console.log(sortNumberArray(compareNumbers, [6,2,4,7]));
+//console.log(sortNumberArray(compareNumbers, [7,10,1]));
 
 
 // Exercise 3
 // Create a function which takes an array of strings and returns a new array, which contains the same strings, but in uppercase. But don't use a loop.
 // Use the builtin Array method: map
-// Try using an array literal as the argument to map.
+// Try using an function literal as the argument to map.
+
+function stringArrayUpperCase(stringArray){
+   return stringArray.map( string => string.toUpperCase());
+}
+
+//console.log(stringArrayUpperCase(["fuzzy","Toledo","TUESDAY"] ))
+//console.log("fuzzy".toUpperCase())
 
 // Exercise 4
 // Create a function which takes an array of strings and returns the first Element in the array, which starts with 'A'
@@ -96,12 +103,28 @@ console.log(sortNumberArray(compareNumbers, [7,10,1]));
 
 // Advanced:
 
+function aFinder(array){
+   function testA(string){
+      return string[0] == "A";   
+   }
+   return array.find(string => testA(string));
+}
+
+//console.log(aFinder(["Orange","Apple","Banana"]))
+
+
 // Exercise 5
 // Write a function which takes an array of numbers and returns the sum of all the numbers in the array, but without writing a loop.
 // Instead use the builtin array method reduce.
 // Examples:
 // accumulate ([1, 2, 3]) -> 6
 // accumulate ([]) -> 0
+
+function numberSum(array){
+   return array.reduce((accumulator, element) => accumulator + element);
+}
+
+//console.log(numberSum([1,2,3]))
 
 // Exercise 6: Putting it all together
 // Write a function, which takes an array of objects representing posts as an argument.
@@ -112,6 +135,25 @@ console.log(sortNumberArray(compareNumbers, [7,10,1]));
 // "<div class='post-title'>Everyday Git</div><div class='like-count'>52</div>"
 
 // Notes: use .filter .sort and .map
+
+function retrieveByLikes (postsArray) {
+   // remove posts with fewer than or equal to 10 likes
+   var filteredArray = postsArray.filter( obj => obj.likes >= 10);
+   // sort posts by number of likes, descending order
+   function compareLikes (obj1, obj2) {
+      return compareNumbers(obj1.likes, obj2.likes);
+   }
+   var sortedArray = filteredArray.sort(compareLikes);
+   // function: parse object into HTML
+   function parser(obj){
+      return ("<div class='post-title'>" + obj.title + "</div><div class='like-count'>" + obj.likes + "</div>");
+   }
+   var parsedArray = sortedArray.map(obj => parser(obj));
+   return parsedArray;
+}
+
+console.log( retrieveByLikes([{title: "What I like about JS", likes: 2}, {title: "What I don't like about JS", likes: 34}, {title: "Everyday Git", likes: 52}]) );
+
 
 // Extra Exercise:
 
