@@ -104,6 +104,17 @@ testEqual ("3.2 check", check([1,2,3], 4), false);
 //   { name: "John" }
 // ]) ➞ ["Steve", "Mike", "John"]
 
+
+function getStudentNames(array) {
+   var studentList = [];
+   for(var i = 0; i < array.lenght; i==){
+      studentList.push(array[i]['name'])
+   }
+   return studentList;
+}
+
+getStudentNames([{name: 'Juan'},{name: 'Pepe'},{name: 'Pedro'}])
+
 // Exercise 7
 // Maximum Difference
 // Given an array of integers, return the difference between the largest and smallest integers in the array.
