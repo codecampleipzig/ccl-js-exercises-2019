@@ -10,7 +10,7 @@ function reverser(x) {
    return x.reverse();
 }
 
-console.log(reverser([1, 2, 3, 4, 5]))
+//console.log(reverser([1, 2, 3, 4, 5]))
 
 // Exercise 2
 // Return the Last Element in an Array
@@ -24,7 +24,7 @@ function last(y) {
    return y[y.length -1];
 }
 
-console.log(last(["cat", "dog", "duck"]))
+//console.log(last(["cat", "dog", "duck"]))
 
 // Exercise 3
 // Check if an Array Contains a Given Number
@@ -61,6 +61,13 @@ console.log(last(["cat", "dog", "duck"]))
 // Notes
 // You can expect only integers ranging from 1 to 12 as test input.
 
+function x(y) {
+   var months = ["January","February","March","April","May","June","July","August","September","Oktober","November", "December"]
+   return months[y]
+}
+
+//console.log(x(1))
+   
 // Exercise 5
 // Generate a Countdown of Numbers in an Array
 // Create a function that takes a number as an argument and returns an array of numbers counting down from this number to zero.
@@ -68,6 +75,16 @@ console.log(last(["cat", "dog", "duck"]))
 // countdown(5) ➞ [5, 4, 3, 2, 1, 0]
 // countdown(1) ➞ [1, 0]
 // countdown(0) ➞ [0]
+
+function countdown(x){
+   var sum = [];
+   for (var i = x; i >= 0; i = i -1){
+      sum.push(i);
+   }
+   return sum;
+}
+
+//console.log(countdown(5))
 
 // Exercise 6
 // Get Student Names
@@ -78,6 +95,22 @@ console.log(last(["cat", "dog", "duck"]))
 //   { name: "Mike" },
 //   { name: "John" }
 // ]) ➞ ["Steve", "Mike", "John"]
+
+function getStudentNames(x){
+   //var names = [];
+   //var specific = x[0];
+   //for(var i = 0; i < specific.length; i++) 
+   //   names.push(specific[name]);
+   //return (names);
+//}
+   var list = [];
+   for (var i = 0; i < x.length; i++){
+         list.push(x[i]["name"]);
+   }
+   return list;
+}
+
+console.log(getStudentNames([{name: "Steve"},{name: "Mike"}, {name:"John"}]))
 
 // Exercise 7
 // Maximum Difference
