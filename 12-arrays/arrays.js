@@ -6,6 +6,20 @@
 // reverse([9, 9, 2, 3, 4]) ➞ [4, 3, 2, 9, 9]
 // reverse([]) ➞ []
 
+
+function reverse (myArray) {
+   result = [];
+   arrayLength = myArray.length;
+   for (var i = 0; i < myArray.length; i = i + 1) {
+        result.push (myArray[arrayLength - 1 - i]);
+   }
+   return result;
+}
+
+console.log (reverse ([1, 2, 3, 4]));
+console.log (reverse ([9, 9, 2, 3, 4]));
+console.log (reverse ([]));
+
 // Exercise 2
 // Return the Last Element in an Array
 // Create a function that accepts an array and returns the last item in the array.
@@ -13,6 +27,14 @@
 // getLastItem([1, 2, 3]) ➞ 3
 // getLastItem(["cat", "dog", "duck"]) ➞ "duck"
 // getLastItem([true, false, true]) ➞ true
+
+function getLastItem (myArray) {
+   return myArray[myArray.length - 1];
+}
+
+console.log (getLastItem ([1, 2, 3]));
+console.log (getLastItem (["cat", "dog", "duck"]) == "duck");
+console.log (getLastItem ([true, false, true]));
 
 // Exercise 3
 // Check if an Array Contains a Given Number
@@ -22,6 +44,19 @@
 // check([1, 1, 2, 1, 1], 3) ➞ false
 // check([5, 5, 5, 6], 5) ➞ true
 // check([], 5) ➞ false
+
+function check (myArray, myNumber) {
+   for (i = 0; i < myArray.length; i = i + 1) {
+      if (myArray[i] == myNumber) {
+         return true;
+      }
+   }
+   return false;
+}
+
+console.log (check ([1, 2, 3, 4, 5], 3));
+console.log (check ([1, 2, 1], 3));
+console.log (check ([], 5));
 
 // Exercise 4
 // Convert Number to Corresponding Month Name
@@ -46,6 +81,29 @@
 // Notes
 // You can expect only integers ranging from 1 to 12 as test input.
 
+myDict = {
+   1: "Jan",
+   2: "Feb",
+};
+
+console.log (myDict[2]);
+console.log ("We prefer to use a dictionary!");
+
+function monthName (key) {
+   months = ["jan", "feb", "mar"];
+   if (key < 1 || key > 12 || !(typeof (key) == "number")) {
+      throw Error ("Key must be a number, which is between 1 and 12 inclusive! Try again!");
+   }
+   return months[key - 1];
+}
+// Strictly, should throw Error ()... but then need a Try-Catch block too...
+
+//console.log (monthName(3));
+//console.log (monthName(0));
+// Error will stop script. So test next one separately...
+// console.log (monthName("1"));
+
+
 // Exercise 5
 // Generate a Countdown of Numbers in an Array
 // Create a function that takes a number as an argument and returns an array of numbers counting down from this number to zero.
@@ -53,6 +111,19 @@
 // countdown(5) ➞ [5, 4, 3, 2, 1, 0]
 // countdown(1) ➞ [1, 0]
 // countdown(0) ➞ [0]
+
+function countdown(number) {
+   result = [];
+   for (i = number; i >= 0; i = i - 1) {
+      result.push(i);
+   }
+   return result;
+}
+
+console.log(countdown(5));
+console.log(countdown(0));
+
+
 
 // Exercise 6
 // Get Student Names
@@ -63,6 +134,21 @@
 //   { name: "Mike" },
 //   { name: "John" }
 // ]) ➞ ["Steve", "Mike", "John"]
+
+function getStudentNames (myArray) {
+   newArray = [];
+   for (i = 0; i <= myArray.length; i = i + 1) {
+      element = myArray[i];
+      newArray.push(element["name"]);
+   }
+   return newArray;
+}
+
+console.log(getStudentNames([
+   { name: "Steve" },
+   { name: "Mike" },
+   { name: "John" }
+   ]));
 
 // Exercise 7
 // Maximum Difference
@@ -83,3 +169,5 @@
 // societyName(["Phoebe", "Chandler", "Rachel", "Ross", "Monica", "Joey"]) ➞ "CJMPRR"
 // Notes
 // The secret society's name should be entirely uppercased.
+
+console.log ("All tests completed!")
