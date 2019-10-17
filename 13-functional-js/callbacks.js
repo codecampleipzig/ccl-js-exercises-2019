@@ -28,12 +28,28 @@ function testEqual(name, testValue, expected) {
 // isPositive (3) -> true
 // isPositive (-5) -> false
 
+function isPositive(number) {
+    if (number >= 0) {
+        return true;
+    }
+    return false;
+} 
+testEqual ("isPositive", isPositive(3), true);
+testEqual ("isPositive", isPositive(-5), false);
+
 // Exercise 1. 1
-// Create a function which takes an array of numbers and returns an array which just contains the numbers that are positive or zero from that array.
+// Create a function which takes an array of numbers and returns an array which just contains the numbers that are 
+//positive or zero from that array.
 // Use the builtin Array method: filter
 // Notes: Use the function isPositive from Exercise 4.0
 // Example:
 // filterPositive ([-3, 5, -7, 6]) -> [5, 6]
+
+function filterPositive(array){
+    return array.filter(isPositive);
+}
+
+testEqual("filterPositive", filterPositive([-3, 5, -7, 6]), [5, 6]);
 
 // Exercise 2.0
 // Write a function which compares two numbers a and b
