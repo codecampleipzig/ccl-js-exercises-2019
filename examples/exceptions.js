@@ -1,15 +1,14 @@
-function add2(num) {
-   if (typeof num != 'number') {
-      throw "Argument must be a number";
+function arrayAtIndex (array, index) {
+   if (index < 0 && index >= array.length) {
+      throw Error ("Index out of bounds: " + index);
    }
-   return num + 2;
+
+   return array[index];
 }
 
 try {
-   add2('1');
-   console.log ("Everything worked fine.");
+   arrayAtIndex ([1, 2, 3], 3);
 }
-catch (error) {
-   console.log ("Error: " + error);
+catch (myException) {
+   console.log (myException);
 }
-console.log ("Done");
