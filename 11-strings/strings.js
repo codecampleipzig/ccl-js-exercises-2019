@@ -49,8 +49,8 @@ console.log(comp("AC","DEFR"))
 // An empty string does not contain any spaces.
 
 function checker(x){
-   for(var i = 0; i < x.length; i++){
-      if (x[i] == " "){
+   for(var i = 0; i < x.length; i++) {
+      if (x[i] == " ") {
          return true;
       }
    }

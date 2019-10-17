@@ -101,6 +101,16 @@ console.log(checkGabe ([1,2,4,5,7,9],4));
 //   { name: "John" }
 // ]) ➞ ["Steve", "Mike", "John"]
 
+function getStudentNames(studentlist) {            
+   var list = [];
+   for (var i = 0; i < studentlist.length; i++) {
+      list.push(studentlist[i].name);
+   }
+   return list;
+}
+
+console.log(getStudentNames([{name: "Steve"},{name: "Mike"},{name: "John"}]))
+
 // Exercise 7
 // Maximum Difference
 // Given an array of integers, return the difference between the largest and smallest integers in the array.
