@@ -135,13 +135,12 @@ console.log(countdown(0));
 //   { name: "John" }
 // ]) ➞ ["Steve", "Mike", "John"]
 
-function getStudentNames (myArray) {
-   newArray = [];
-   for (i = 0; i <= myArray.length; i = i + 1) {
-      element = myArray[i];
-      newArray.push(element["name"]);
+function getStudentNames(studentList) {
+   var list = [];
+   for (var i = 0; i < studentList.length; i = i + 1) { // Could use i++
+      list.push(studentList[i]["name"]); // Could use studentList[i].name notation
    }
-   return newArray;
+   return list;
 }
 
 console.log(getStudentNames([
