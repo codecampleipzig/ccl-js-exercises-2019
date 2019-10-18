@@ -7,3 +7,12 @@
 // The first moon landing was on July 20, 1969, at 20:17 UTC
 // Create a binding moonlandingDate and bind it to a Date object which represents that instance.
 
+
+function currentYear () {
+   var today = new Date;
+    return today.getFullYear();
+}
+console.log (currentYear());
+
+var moonLandingDate = new Date('July 20, 1969 20:17:00');
+console.log (moonLandingDate.getFullYear());

@@ -41,6 +41,50 @@
 // Check the Tests tab to see exactly what's being evaluated.
 // You can easily solve this with regex but the challenge is intended to be solved with logic.
 
+function validateEmail(email) {
+    if (email[0] == "@" || email[0] == ".") {
+        return false;
+    }
+    
+    for (i=1; i<email.length; i++) {
+        if (email[i] == "@") {
+            var domain = email.slice(i+1, email.length);
+                 
+            if (domain[0] == "@" || domain[0] == ".") {
+                return false;
+            }
+                      
+            for (i=1; i < domain.length; i++) {
+                
+                if (domain[i] == "@") {
+                    return false
+                }
+                if (domain[i] == ".") {
+                    var country = domain.slice(i+1, domain.length);
+                    if (country == "") {
+                        return false;
+                    }
+                    for (i=0; i < country.length; i++) {
+                        
+                        if (country[i] == "@" || country[i] == ".") {
+                            return false;
+                        }
+                    }
+                    return true;
+
+                }                
+            } 
+            return false;
+        }
+    }
+    return false;
+}
+
+console.log (validateEmail("@gmail.com"));
+console.log (validateEmail("hello.gmail@com"));
+console.log (validateEmail("gmail"));
+console.log (validateEmail("hello@gmail"));
+console.log (validateEmail("john.smith@edabit.com"));
 
 // Maskify the String
 // Usually when you sign up for an account to buy something, your credit card number, phone number or answer to a secret question is partially obscured in some way. Since someone could look over your shoulder, you don't want that shown on your screen. Hence, the website masks these strings.
